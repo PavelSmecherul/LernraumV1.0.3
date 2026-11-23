@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#164d40">
+  <meta name="description" content="Your own space to learn German. Flashcards, thoughtful practice, a study planner and progress that grows with you.">
+  <title>Lernraum · Your study space</title>
+  <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
+:root{--bg:#f6f8f7;--surface:#fff;--text:#203b34;--muted:#73827c;--border:#e3eae6;--green:#23634f;--green-dark:#164d40;--mint:#e8f2e6;--lime:#d6edb9;--sage:#e8f0de;--peach:#faeade;--lavender:#ece8f7;--sky:#e3eef5;--butter:#f8f1d7;--rose:#f7e6e7;--shadow:0 8px 28px #203b3406;--danger:#a93e3e;--success:#2c7051;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 'DM Sans',system-ui,sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button{color:inherit}a{color:inherit;text-decoration:none}button:disabled{cursor:not-allowed;opacity:.45}button,input,select,textarea{outline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #77aa87}button{border:0}h1,h2,h3,h4,p{margin:0}h1,h2,h3,h4{font-family:'Manrope',system-ui,sans-serif;line-height:1.3}h1{font-size:2rem;letter-spacing:-1.1px;font-weight:800}h2{font-size:1.18rem;font-weight:750;letter-spacing:-.35px}h3{font-size:1.04rem;font-weight:750}p{color:var(--muted)}small{font-size:.8rem}svg.icon{width:21px;height:21px;flex-shrink:0;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}button .icon{width:19px;height:19px}.muted{color:var(--muted)}.small{font-size:.875rem}.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.skip-link{position:fixed;top:-100px;left:12px;z-index:1000;background:var(--surface);padding:12px}.skip-link:focus{top:12px}.app-shell{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:242px;background:var(--surface);border-right:1px solid var(--border);padding:32px 20px 20px;display:flex;flex-direction:column;z-index:30}.brand{display:flex;align-items:center;gap:10px;padding:0 13px;color:var(--green-dark);font:800 1.65rem 'Manrope',sans-serif;letter-spacing:-1px}.brand-mark{display:grid;place-items:center;background:var(--green-dark);color:var(--lime);width:38px;height:38px;border-radius:12px}.brand-mark .icon{width:24px;height:24px}.brand-dot{color:#89a87b}.workspace-label{display:flex;align-items:center;gap:10px;margin:37px 9px 27px;padding:12px;border:1px solid var(--border);border-radius:11px;font-size:.875rem;font-weight:600}.flag{width:23px;height:17px;display:inline-block;border-radius:3px;background:linear-gradient(#222 0 33.33%,#d44b46 33.33% 66.66%,#edc757 66.66%);flex-shrink:0}.nav-label{color:var(--muted);font-size:.7rem;letter-spacing:1.7px;font-weight:700;padding:0 15px;margin:0 0 12px}.nav{display:grid;gap:5px}.nav a{padding:12px 15px;border-radius:9px;display:flex;align-items:center;gap:13px;font-size:.92rem;color:#6d7e76;font-weight:550;transition:background .15s}.nav a:hover{background:var(--bg);color:var(--green)}.nav a.active{background:#eaf2e9;color:var(--green);font-weight:700}.nav .count{margin-left:auto;background:#fff8;color:var(--green);font-size:.75rem;padding:0px 7px;border-radius:5px}.sidebar-bottom{margin-top:auto;padding-top:35px}.level-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;margin:15px 5px}.level-card .level-top{display:flex;align-items:center;gap:9px;font-weight:700;font-size:.875rem}.level-card .icon{color:#a89150}.level-card .progress{margin:13px 0 7px}.profile{padding:15px 10px 0;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px;font-size:.9rem}.avatar{width:36px;height:36px;border-radius:50%;background:#e5ebde;display:grid;place-items:center;color:#557343;font-weight:700}.profile button{margin-left:auto;background:transparent;color:var(--muted);padding:5px}.main-wrap{margin-left:242px}.topbar{height:84px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:var(--surface);gap:18px}.breadcrumb{font-size:.875rem;color:var(--muted);display:flex;gap:12px;align-items:center}.breadcrumb strong{font-weight:550;color:var(--text)}.top-actions{display:flex;align-items:center;gap:19px}.search-launch{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--muted);padding:8px 12px;width:225px;text-align:left;font-size:.85rem}.search-launch kbd{margin-left:auto;border:1px solid var(--border);border-radius:4px;padding:0 4px;font:11px system-ui}.streak-pill{color:#ba7047;display:flex;align-items:center;gap:6px;font-size:.85rem;font-weight:650;white-space:nowrap}.icon-btn{background:transparent;border:1px solid var(--border);border-radius:9px;display:inline-grid;place-items:center;padding:9px}.icon-btn:hover{background:var(--bg)}.mobile-menu{display:none}.main-content{max-width:1450px;padding:35px 40px 48px;margin:auto;min-height:calc(100vh - 84px)}.greeting{display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:27px}.greeting p{margin-top:8px;font-size:.94rem}.date-label{font-size:.8rem;color:var(--muted);white-space:nowrap;padding-bottom:3px}.source-notice{background:#eff2ed;border:1px solid #dce5d9;color:#66785d;padding:9px 13px;border-radius:9px;font-size:.8rem;display:flex;gap:9px;align-items:center;margin-bottom:22px}.source-notice .icon{width:17px;height:17px}.source-notice button{margin-left:auto;background:transparent;text-decoration:underline;font-size:inherit;white-space:nowrap}.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:25px}.stat{border:1px solid var(--border);background:var(--surface);border-radius:13px;padding:19px 20px;display:flex;gap:15px;align-items:center;box-shadow:var(--shadow)}.stat-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;flex-shrink:0}.stat-icon .icon{width:22px;height:22px}.stat-value{font:800 1.55rem 'Manrope',sans-serif;letter-spacing:-.6px}.stat-value span{font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:0}.stat-label{font-size:.8rem;color:var(--muted);margin-top:2px}.sage{background:var(--sage);color:#607c43}.peach{background:var(--peach);color:#b37952}.lavender{background:var(--lavender);color:#8673b2}.sky{background:var(--sky);color:#5c8ca6}.butter{background:var(--butter);color:#ad9144}.rose{background:var(--rose);color:#ad6d7c}.dashboard-columns{display:grid;grid-template-columns:minmax(0,1fr) 302px;gap:24px}.hero{background:var(--green-dark);color:white;min-height:243px;border-radius:15px;padding:30px 31px;position:relative;overflow:hidden;display:flex;align-items:center}.hero-copy{position:relative;z-index:1;width:65%}.hero .eyebrow{color:#c4d8b8;font-size:.67rem;letter-spacing:1.9px;display:flex;gap:7px;align-items:center}.hero .eyebrow .icon{width:14px;height:14px}.hero h2{font-size:1.8rem;font-weight:750;line-height:1.24;letter-spacing:-.6px;margin:12px 0 10px;max-width:340px}.hero p{color:#c2d4cd;font-size:.85rem;max-width:320px}.hero .btn{margin-top:22px;background:var(--lime);color:#284c35;padding:10px 18px;font-size:.85rem}.hero-art{position:absolute;right:-6px;bottom:-3px;width:40%;max-width:270px;height:235px;opacity:.94}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;background:var(--green);color:white;border:1px solid transparent;border-radius:8px;padding:11px 18px;font-size:.875rem;font-weight:650;transition:filter .15s,transform .15s}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn.secondary{background:var(--surface);border-color:var(--border);color:var(--text)}.btn.soft{background:var(--mint);color:var(--green)}.btn.danger{background:#f9e8e8;color:var(--danger)}.btn.sm{font-size:.8rem;padding:7px 12px}.btn.full{width:100%}.text-btn{display:inline-flex;gap:6px;align-items:center;background:none;color:var(--green);font-size:.83rem;font-weight:650;padding:5px 0}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:27px 0 15px}.section-head p{font-size:.83rem;margin-top:4px}.unit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.unit-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:19px;box-shadow:var(--shadow);transition:transform .2s,border-color .2s;cursor:pointer;text-align:left}.unit-card:hover{transform:translateY(-3px);border-color:#a9c3ab}.unit-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.unit-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center}.unit-icon .icon{width:22px;height:22px}.unit-tag{font-size:.68rem;font-weight:650;color:var(--muted);background:var(--bg);border-radius:5px;padding:3px 6px}.unit-card h3{font-size:.96rem;letter-spacing:-.25px}.unit-card p{font-size:.79rem;margin-top:5px}.unit-meta{display:flex;align-items:center;gap:7px;margin-top:17px;color:var(--muted);font-size:.72rem}.unit-meta .icon{width:13px;height:13px}.progress{height:6px;background:var(--border);border-radius:10px;overflow:hidden}.progress>span{display:block;height:100%;background:#92b087;border-radius:10px;transition:width .3s}.unit-card .progress{margin-top:17px;height:5px}.progress-label{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-top:7px}.tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.tool-card{display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:18px 16px;text-align:left}.tool-card:hover{border-color:#9fbba5}.tool-card>.icon{width:23px;height:23px;color:#7d927d}.tool-card strong{font-size:.85rem;display:block}.tool-card small{font-size:.71rem;color:var(--muted);display:block;margin-top:3px}.panel{background:var(--surface);border:1px solid var(--border);border-radius:13px;box-shadow:var(--shadow);padding:23px}.side-column{display:grid;align-content:start;gap:20px}.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}.panel-heading h2{font-size:1rem}.panel-heading .icon{color:var(--muted);width:18px;height:18px}.goal-ring-wrap{display:flex;align-items:center;gap:17px;margin:10px 0 19px}.goal-ring{width:86px;height:86px;flex-shrink:0;border-radius:50%;background:conic-gradient(#729a64 calc(var(--percent)*1%),var(--border) 0);display:grid;place-items:center}.goal-ring-inner{background:var(--surface);width:68px;height:68px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}.goal-ring strong{font:800 1.15rem 'Manrope'}.goal-ring small{font-size:.6rem;color:var(--muted)}.goal-copy strong{font-size:.9rem;display:block}.goal-copy p{font-size:.77rem;margin-top:4px}.days{display:flex;justify-content:space-between;gap:5px;border-top:1px solid var(--border);padding-top:16px}.day{text-align:center;display:flex;align-items:center;flex-direction:column;gap:6px;font-size:.64rem;color:var(--muted)}.day-circle{width:26px;height:26px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:.65rem}.day-circle .icon{width:13px;height:13px}.day.today .day-circle{border:1px solid #839f79;color:var(--green)}.day.done .day-circle{background:var(--green);color:white}.plan-preview{display:grid;gap:14px}.mini-plan{display:flex;align-items:center;gap:10px}.check-btn{width:20px;height:20px;flex-shrink:0;border:1.5px solid var(--border);border-radius:6px;display:grid;place-items:center;background:transparent}.check-btn.checked{background:var(--green);color:white;border-color:var(--green)}.check-btn .icon{width:14px;height:14px}.mini-plan strong{display:block;font-size:.8rem;font-weight:600;overflow-wrap:anywhere}.mini-plan p{font-size:.7rem;margin-top:3px}.completed-text{text-decoration:line-through;opacity:.6}.empty-small{padding:9px 0 18px;font-size:.82rem;color:var(--muted);line-height:1.7}.quote-card{background:#edf1e9;border:1px solid #dfe7d8;border-radius:13px;padding:23px}.quote-card .eyebrow{font-size:.63rem;color:#849875}.quote-card h3{margin-top:12px;font-size:1.3rem;font-weight:650;color:#587044}.quote-card p{font-size:.78rem;color:#819174;margin-top:5px}.quote-card .phrase-line{display:flex;align-items:center;justify-content:space-between}.quote-card button{background:transparent;color:#6e8c5b;padding:5px}.footer-note{text-align:center;margin-top:32px;font-size:.73rem;color:var(--muted)}.page-intro{margin-bottom:27px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}.page-intro p{margin-top:8px;font-size:.94rem}.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:23px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:.85rem;font-weight:600}.field input,.field select,.field textarea,.toolbar select,.toolbar input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:11px 12px;color:var(--text);min-height:44px}.toolbar select{width:auto;max-width:100%;min-width:180px}.toolbar input{max-width:270px}.field select,.toolbar select{appearance:none;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2373827c' stroke-width='1.7'%3E%3Cpath d='m5 8 5 5 5-5'/%3E%3C/svg%3E");background-size:18px;background-repeat:no-repeat;background-position:right 12px center}.field textarea{min-height:90px;resize:vertical}.pill{display:inline-flex;align-items:center;gap:5px;border-radius:100px;padding:5px 10px;font-size:.75rem;background:var(--mint);color:var(--green);white-space:nowrap}.library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.library-grid .unit-card{padding:24px}.library-grid .unit-card h3{font-size:1.1rem}.library-grid .unit-card p{font-size:.88rem}.library-grid .unit-card .unit-description{margin-top:14px;min-height:65px;line-height:1.7}.library-grid .unit-meta{font-size:.78rem}.subject-heading{display:flex;align-items:center;gap:12px;margin:0 0 21px}.subject-heading .flag{width:32px;height:23px}.subject-heading p{font-size:.8rem}.subject-heading .pill{margin-left:auto}.center-stage{max-width:830px;margin:auto}.study-setup{padding:36px;display:grid;grid-template-columns:1fr 250px;gap:35px;align-items:center}.setup-icon{width:72px;height:72px;border-radius:20px;display:grid;place-items:center;margin-bottom:20px}.setup-icon .icon{width:35px;height:35px}.study-setup h2{font-size:1.5rem}.study-setup p{font-size:.9rem;line-height:1.8;margin:10px 0 20px}.setup-fields{display:grid;gap:16px}.setup-stats{display:flex;gap:28px}.setup-stats strong{font:750 1.4rem 'Manrope';display:block}.setup-stats small{font-size:.75rem;color:var(--muted)}.hint{font-size:.83rem;color:var(--muted);padding:16px 0;line-height:1.7}.session-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;font-size:.875rem}.session-top strong{font-weight:650}.session-top .text-btn{color:var(--muted)}.flashcard{margin:24px 0 18px;min-height:310px;width:100%;border:1px solid var(--border);background:var(--surface);border-radius:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;position:relative;transition:background .2s}.flashcard.flipped{background:#edf4e9;border-color:#c9ddc2}.flashcard .eyebrow{font-size:.72rem;color:var(--muted);margin-bottom:30px}.flashcard .word{font:750 clamp(1.5rem,4vw,2.4rem)/1.3 'Manrope';letter-spacing:-.5px}.flashcard .translation{font-size:1rem;color:var(--muted);margin-top:16px}.flashcard .flip-hint{font-size:.76rem;color:var(--muted);margin-top:35px;display:flex;align-items:center;gap:7px}.flashcard .flip-hint .icon{width:16px;height:16px}.card-actions{display:flex;justify-content:center;gap:12px;align-items:center;margin:12px 0}.review-grades{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grade{padding:13px;border-radius:10px;font-size:.9rem;font-weight:600;background:var(--surface);border:1px solid var(--border)}.grade small{display:block;font-weight:400;margin-top:3px;color:var(--muted);font-size:.73rem}.grade.again{background:#fcf0e9;color:#aa704e}.grade.hard{background:#fbf7e7;color:#a18d42}.grade.good{background:#e7f2e3;color:#5c874d}.review-grades.invisible{visibility:hidden}.session-hint{text-align:center;font-size:.77rem;color:var(--muted);margin-top:20px}.result{text-align:center;padding:45px}.result .setup-icon{margin:0 auto 20px}.result h2{font-size:1.75rem}.result p{margin:12px auto 22px;max-width:440px}.result-stats{display:flex;justify-content:center;gap:45px;margin:25px 0 30px}.result-stats strong{font:800 1.7rem 'Manrope';display:block}.result-stats span{color:var(--muted);font-size:.83rem}.question-card{padding:32px;margin-top:22px}.question-card h2{margin:24px 0;font-size:1.4rem;line-height:1.5}.options{display:grid;gap:11px}.option{display:flex;align-items:center;gap:13px;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:left;transition:background .1s}.option span{width:27px;height:27px;border:1px solid var(--border);border-radius:7px;display:grid;place-items:center;color:var(--muted);font-size:.8rem}.option:hover{background:var(--bg)}.option.selected{border-color:var(--green);background:var(--mint)}.option.correct{border-color:#79a06c;background:#eaf3e7;color:#365e2d;opacity:1}.option.incorrect{border-color:#c68d85;background:#f9ece8;opacity:1}.answer-input{width:100%;padding:15px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text)}.umlaut-row{display:flex;gap:6px;margin:10px 0}.umlaut-row button{padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:5px;font-size:.85rem}.word-bank,.word-answer{display:flex;gap:9px;flex-wrap:wrap;padding:15px 0;min-height:65px}.word-answer{border-bottom:2px solid var(--border);margin-bottom:10px}.word-chip{padding:9px 14px;border:1px solid var(--border);border-radius:8px;background:var(--bg);font-size:.92rem}.word-chip.used{visibility:hidden}.feedback{margin-top:24px;padding:18px;border-radius:10px;font-size:.9rem;line-height:1.7}.feedback.correct{background:#eaf3e7;color:#365e2d}.feedback.incorrect{background:#fcf0e9;color:#8c593a}.feedback strong{display:flex;gap:7px;align-items:center}.feedback p{color:inherit;font-size:.84rem;margin-top:5px}.question-footer{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:23px}.question-footer small{color:var(--muted)}.quiz-modes{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.mode-card{padding:18px 14px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:11px}.mode-card .icon{margin-bottom:9px;color:var(--green)}.mode-card strong{display:block;font-size:.85rem}.mode-card p{font-size:.76rem;margin-top:5px}.planner-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:24px}.week-nav{display:flex;align-items:center;gap:13px;margin-bottom:22px}.week-nav strong{font-size:1rem;margin-right:auto}.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:24px}.calendar-day{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:13px 4px;text-align:center;position:relative}.calendar-day span{display:block;color:var(--muted);font-size:.75rem}.calendar-day strong{display:block;margin-top:5px;font-size:1.1rem}.calendar-day.selected{background:var(--green);border-color:var(--green);color:white}.calendar-day.selected span{color:#d7e4da}.calendar-day.today:not(.selected){border-color:#8bab80}.calendar-day em{display:block;margin:7px auto 0;width:5px;height:5px;border-radius:50%;background:#9ebc8e}.plan-row{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:12px}.plan-row .plan-info{flex:1;min-width:0}.plan-row strong{font-size:.92rem;overflow-wrap:anywhere}.plan-row p{font-size:.8rem;margin-top:4px}.row-actions{display:flex;gap:6px}.row-actions .icon-btn{border:0;padding:6px;color:var(--muted)}.empty-state{padding:40px 25px;text-align:center;border:1px dashed var(--border);border-radius:13px}.empty-state>.icon{width:32px;height:32px;color:#90a48e;margin-bottom:12px}.empty-state h3{font-size:1rem}.empty-state p{font-size:.86rem;margin:9px auto 17px;max-width:340px}.timer{text-align:center}.timer-display{font:750 3.2rem 'Manrope';font-variant-numeric:tabular-nums;letter-spacing:-2px;margin:20px 0 8px}.timer p{font-size:.82rem}.timer-controls{display:flex;justify-content:center;gap:9px;margin-top:21px}.timer-presets{display:flex;justify-content:center;gap:6px;margin-top:17px}.timer-presets button{font-size:.76rem;padding:5px 9px;background:var(--bg);border-radius:6px;color:var(--muted)}.timer-presets button.active{background:var(--mint);color:var(--green)}.progress-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:23px}.chart{height:190px;display:flex;align-items:stretch;gap:17px;padding-top:17px}.chart-col{flex:1;display:flex;flex-direction:column;align-items:center;min-width:0}.chart-bar-wrap{flex:1;width:100%;display:flex;align-items:flex-end;position:relative;border-bottom:1px solid var(--border)}.chart-bar{width:100%;max-width:42px;margin:0 auto;background:#9fbf91;border-radius:6px 6px 0 0;min-height:3px}.chart-col small{font-size:.7rem;color:var(--muted);padding-top:9px}.chart-col .chart-value{font-size:.65rem;color:var(--muted);padding-bottom:4px}.heatmap{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:22px}.heatcell{height:30px;border-radius:5px;background:var(--bg);border:1px solid var(--border)}.heatcell.low{background:#c4d7bb;border-color:#c4d7bb}.heatcell.high{background:#729a64;border-color:#729a64}.heatmap-caption{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-top:12px}.achievement-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:27px}.achievement{padding:23px 16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;text-align:center}.achievement .medal{width:52px;height:52px;margin:0 auto 14px;background:var(--bg);color:#a6b1a8;border-radius:50%;display:grid;place-items:center}.achievement.unlocked .medal{background:var(--butter);color:#a58c42}.achievement h3{font-size:.86rem}.achievement p{font-size:.76rem;margin-top:6px;line-height:1.6}.achievement .pill{margin-top:13px;font-size:.65rem}.mastery-list{display:grid;gap:20px}.mastery-row{display:flex;gap:12px;align-items:center}.mastery-row>div:nth-child(2){flex:1}.mastery-row strong{font-size:.85rem;font-weight:600}.mastery-row .progress{margin-top:8px}.mastery-row>span{font-size:.8rem;color:var(--muted)}.activity{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}.activity:last-child{border:0}.activity>.icon{color:#88a17e;width:19px}.activity strong{font-size:.82rem;font-weight:600;display:block}.activity small{font-size:.7rem;color:var(--muted)}.activity>span{margin-left:auto;font-size:.8rem;color:var(--green);white-space:nowrap}.settings-layout{display:grid;grid-template-columns:1fr 1fr;gap:23px}.settings-layout .panel h2{margin-bottom:10px}.settings-layout .panel>p{font-size:.85rem;margin-bottom:22px}.form-stack{display:grid;gap:19px}.settings-note{font-size:.8rem;line-height:1.8;padding:18px;background:var(--bg);border-radius:8px;margin-top:20px;color:var(--muted)}.settings-actions{display:flex;gap:10px;flex-wrap:wrap}.source-detail{border-left:3px solid #9bb28e;padding:3px 0 3px 15px;font-size:.86rem;line-height:1.8;color:var(--muted)}dialog{border:1px solid var(--border);border-radius:17px;padding:0;width:min(620px,calc(100vw - 30px));max-height:88vh;color:var(--text);background:var(--surface);box-shadow:0 25px 90px #10241e30}dialog::backdrop{background:#18352a55;backdrop-filter:blur(4px)}.modal-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding:20px 25px;gap:15px;position:sticky;top:0;background:var(--surface);z-index:1}.modal-head h2{font-size:1.1rem}.modal-body{padding:25px}.modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:25px}.modal-body p{font-size:.9rem;line-height:1.8}.lesson-title{display:flex;align-items:center;gap:12px;margin-bottom:20px}.lesson-body h3{font-size:1.25rem;margin:20px 0 12px}.lesson-rule{padding:19px;background:var(--mint);color:var(--green);border-radius:10px;font-size:.9rem;line-height:1.8;margin:20px 0}.example{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:10px}.example strong{font-size:.9rem;font-weight:600}.example p{font-size:.8rem}.example .icon-btn{border:0}.lesson-tip{font-size:.82rem;margin:20px 0;background:var(--butter);padding:15px;border-radius:8px;color:#8b793f}.vocab-table{width:100%;border-collapse:collapse;font-size:.85rem}.vocab-table td,.vocab-table th{text-align:left;padding:11px 8px;border-bottom:1px solid var(--border)}.vocab-table th{color:var(--muted);font-size:.75rem;font-weight:500}.vocab-table td:last-child{color:var(--muted)}.search-results{margin-top:16px;display:grid;gap:8px}.search-result{padding:12px 15px;border-radius:8px;border:1px solid var(--border);background:var(--surface);display:flex;align-items:center;gap:12px;text-align:left;width:100%}.search-result:hover{background:var(--bg)}.search-result strong{font-size:.88rem;display:block}.search-result small{font-size:.75rem;color:var(--muted);display:block}.search-result>.icon{color:var(--green)}.split-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}#toasts{position:fixed;bottom:24px;right:24px;z-index:200;display:grid;gap:10px;max-width:calc(100vw - 40px)}.toast{background:var(--green-dark);color:white;padding:13px 20px;border-radius:10px;box-shadow:0 7px 30px #173b2b26;font-size:.875rem;animation:toast-in .2s ease}.toast.error{background:#9b4c3f}.menu-scrim{display:none}.storage-error{padding:12px;border:1px solid #b77857;background:#fff1e4;color:#86512f;border-radius:8px;font-size:.85rem;margin-bottom:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@keyframes toast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+[data-theme=dark]{--bg:#15241f;--surface:#1e3028;--text:#e1ebe3;--muted:#9aad9f;--border:#34483a;--green:#63966b;--green-dark:#173d2d;--mint:#2d4632;--sage:#33482e;--peach:#523d30;--lavender:#3d354f;--sky:#2c424d;--butter:#4c452e;--rose:#4c333c;--shadow:none;color-scheme:dark}[data-theme=dark] .brand{color:#c2dab6}[data-theme=dark] .nav a.active{background:#2d4632;color:#c1d8b6}[data-theme=dark] .source-notice{background:#283e2c;border-color:#3f5440;color:#b7c7ac}[data-theme=dark] .flashcard.flipped{background:#2b432f;border-color:#587850}[data-theme=dark] .quote-card{background:#2b3e2c;border-color:#3b5139}[data-theme=dark] .quote-card h3{color:#bdd2ad}[data-theme=dark] .avatar{background:#3d5236;color:#c1d8ad}[data-theme=dark] .sage{color:#adc79b}[data-theme=dark] .peach{color:#d4ac8d}[data-theme=dark] .lavender{color:#b8a9d6}[data-theme=dark] .sky{color:#9ebdd1}[data-theme=dark] .butter{color:#cabb81}[data-theme=dark] .rose{color:#d2a4b1}
+@media(min-width:1550px){.main-content{padding-top:42px}.hero{min-height:265px}.hero h2{font-size:2rem}.unit-card{padding:23px}.dashboard-columns{grid-template-columns:minmax(0,1fr) 325px;gap:28px}.side-column{gap:23px}.panel{padding:25px}.unit-grid{gap:18px}}
+@media(max-width:1250px){.sidebar{width:212px;padding-left:12px;padding-right:12px}.main-wrap{margin-left:212px}.main-content{padding:28px}.topbar{padding:0 28px}.dashboard-columns{grid-template-columns:minmax(0,1fr) 270px;gap:20px}.stat{padding:16px;gap:10px}.stat-icon{width:38px;height:38px}.stat-value{font-size:1.35rem}.unit-grid{grid-template-columns:repeat(2,1fr)}.unit-grid .unit-card:last-child{display:none}.tool-grid{grid-template-columns:1fr}.tool-card{padding:14px 18px}.tool-card small{display:inline;margin-left:0}.hero{padding:25px}.hero-copy{width:72%}.hero h2{font-size:1.65rem}.hero-art{right:-20px;width:38%;opacity:.8}.library-grid{grid-template-columns:repeat(2,1fr)}.achievement-grid{grid-template-columns:repeat(4,1fr)}.planner-layout{grid-template-columns:minmax(0,1fr) 250px}.search-launch{width:190px}.date-label{display:none}.panel{padding:20px}}
+@media(max-width:1000px){.sidebar{width:190px}.main-wrap{margin-left:190px}.brand{font-size:1.45rem;padding:0 8px}.brand-mark{width:33px;height:33px}.workspace-label{margin-left:4px;margin-right:4px;font-size:.78rem;padding:10px}.nav a{font-size:.85rem;padding:11px}.topbar{padding:0 22px;height:75px}.main-content{padding:26px 22px}.top-actions{gap:12px}.search-launch{width:auto;padding:8px}.search-launch span,.search-launch kbd{display:none}.dashboard-columns{grid-template-columns:1fr}.side-column{grid-template-columns:1fr 1fr;gap:18px}.quote-card{display:none}.unit-grid{grid-template-columns:repeat(3,1fr)}.unit-grid .unit-card:last-child{display:block}.tool-grid{grid-template-columns:repeat(3,1fr)}.tool-card{padding:15px 11px;gap:8px}.tool-card small{display:block}.stat-grid{gap:10px}.stat{padding:14px 10px}.stat-icon{display:none}.stat-value{font-size:1.5rem}.hero{min-height:240px}.hero-copy{width:65%}.hero h2{font-size:1.9rem}.hero-art{width:34%;right:10px;opacity:1}.planner-layout{grid-template-columns:1fr}.planner-layout>.side-column{display:block}.timer{max-width:100%}.progress-layout{grid-template-columns:1fr}.achievement-grid{grid-template-columns:repeat(2,1fr)}.settings-layout{grid-template-columns:1fr}.study-setup{grid-template-columns:1fr;padding:27px;gap:25px}.quiz-modes{grid-template-columns:repeat(2,1fr)}.library-grid .unit-card{padding:20px}}
+@media(max-width:720px){.sidebar{transform:translateX(-100%);transition:transform .2s;width:240px}.sidebar.open{transform:translateX(0)}.menu-scrim.show{display:block;position:fixed;inset:0;background:#142c2155;z-index:29}.main-wrap{margin-left:0}.mobile-menu{display:inline-grid}.topbar{height:68px;padding:0 18px;gap:12px}.breadcrumb{margin-right:auto}.breadcrumb>span{display:none}.top-actions{gap:10px}.top-actions>.avatar{display:none}.streak-pill span{display:none}.main-content{padding:25px 18px 35px}.greeting{margin-bottom:21px}h1{font-size:1.72rem}.greeting p,.page-intro p{font-size:.87rem}.stat-grid{grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:21px}.stat{padding:15px}.stat-icon{display:grid;width:38px;height:38px}.stat-value{font-size:1.4rem}.source-notice{align-items:flex-start;line-height:1.6;font-size:.75rem}.source-notice button{align-self:center}.source-notice>.icon{display:none}.hero{padding:25px;min-height:250px}.hero-copy{width:74%}.hero h2{font-size:1.7rem}.hero-art{width:38%;right:-23px;opacity:.75}.hero p{font-size:.81rem;max-width:250px}.unit-grid{grid-template-columns:1fr 1fr}.unit-grid .unit-card:last-child{display:none}.unit-card{padding:17px}.side-column{grid-template-columns:1fr}.tool-grid{gap:9px}.tool-card{display:block;padding:14px}.tool-card>.icon{margin-bottom:8px}.tool-card strong{font-size:.78rem}.tool-card small{font-size:.65rem;line-height:1.5}.panel{padding:21px}.goal-ring-wrap{justify-content:center;gap:25px}.days{justify-content:space-around}.dashboard-columns{gap:22px}.library-grid{grid-template-columns:1fr}.library-grid .unit-card .unit-description{min-height:0}.page-intro{align-items:flex-start;flex-direction:column;gap:17px}.toolbar{gap:10px}.toolbar select,.toolbar input{width:100%;max-width:none}.subject-heading .pill{font-size:.65rem;padding:5px 8px}.study-setup{padding:24px}.setup-stats{gap:25px}.flashcard{min-height:300px;padding:25px 18px}.review-grades{gap:8px}.grade{padding:12px 5px;font-size:.85rem}.grade small{font-size:.67rem}.question-card{padding:23px 19px}.question-card h2{font-size:1.18rem}.question-footer{flex-wrap:wrap}.week-grid{gap:5px}.calendar-day{padding:11px 3px}.calendar-day span{font-size:.67rem}.calendar-day strong{font-size:1rem}.week-nav{gap:8px;flex-wrap:wrap}.week-nav strong{font-size:.88rem}.plan-row{padding:15px;gap:11px}.plan-row .row-actions{flex-direction:column}.result{padding:35px 22px}.result-stats{gap:30px}.result h2{font-size:1.5rem}.achievement-grid{gap:12px}.achievement{padding:20px 12px}.chart{gap:12px}.modal-head{padding:17px 20px}.modal-body{padding:20px}.split-fields{grid-template-columns:1fr}.source-detail{font-size:.83rem}.footer-note{font-size:.67rem}.level-card{margin-top:25px}.settings-actions .btn{flex:1}.session-hint{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.sidebar{overflow-y:auto}.profile{flex-shrink:0}.toast:nth-last-child(n+4){display:none}.brand{gap:8px}.brand-dot{margin-left:-7px}.workspace-label{font-size:.82rem}
+#toasts{pointer-events:none}@media(max-width:720px){.sidebar{visibility:hidden}.sidebar.open{visibility:visible}}
+
+/* Numbered textbook course */
+.course-toolbar{display:flex;gap:18px;align-items:end}.course-toolbar .field{flex:1}.course-toolbar input,.course-toolbar select{width:100%}.course-chapter{margin:28px 0 38px}.course-chapter .section-head{align-items:center}.unit-tag{font-size:.9rem;font-weight:700;letter-spacing:.03em}.unit-card h3{overflow-wrap:anywhere}.lesson-points{padding-left:22px;line-height:1.7;margin:20px 0}.lesson-points li+li{margin-top:10px}.productive-task{margin-top:28px;padding-top:10px;border-top:1px solid var(--border)}.productive-task h3{margin-top:20px}.productive-task textarea{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px;width:100%;resize:vertical;line-height:1.6}.productive-task small{color:var(--muted);line-height:1.5}.modal-actions{flex-wrap:wrap}.source-notice{line-height:1.5}.unit-meta{flex-wrap:wrap}.course-chapter .eyebrow{color:var(--muted);display:block;margin-bottom:6px}
+@media(max-width:600px){.course-toolbar{flex-direction:column;align-items:stretch}.course-chapter .section-head{align-items:start;gap:12px;flex-direction:column}.modal-actions .btn{flex:1 1 100%}.subject-heading{flex-wrap:wrap}.source-notice span{min-width:0}.unit-card h3{font-size:1.1rem}}
+.notebook-section,.badge-group,.rank-panel{margin-bottom:1rem}.notebook-row{display:flex;align-items:center;gap:1rem;text-align:left;width:100%;padding:1rem .35rem;background:transparent;border:0;border-top:1px solid var(--border)}.notebook-row:hover{background:var(--bg)}.notebook-row small{display:block;color:var(--muted);font-size:.88rem}.rank-panel{display:flex;gap:1rem;align-items:flex-start;margin-top:1.5rem}.rank-panel p{margin:.25rem 0 .75rem}.badge-group summary,details summary{cursor:pointer;font-weight:650}.badge-group .achievement-grid{margin:1rem 0 0}
+</style>
+  <script type="module">// Complete vocabulary tables, printed pp. 42–45 (PDF pp. 44–47).
+// Each line corresponds to one printed entry. ~ separates independently studied variants.
+// Dictionary forms and obvious printed article/spelling errors are normalized.
+const vocabularyPage=(page,text)=>({page,entries:text.trim().split('\n').map((line,index)=>{const [german,english]=line.split('=');const terms=german.split('~'),translations=english.split('~');return {row:index+1,terms,meanings:terms.map((_,i)=>translations.length===1?translations[0]:translations[i])};})});
+const textbookVocabulary={
+ '1.1a':vocabularyPage(42,`
+der Bauernhof=farm
+Deutschland=Germany
+das Dorf=village
+das Einfamilienhaus=detached house
+Frankreich=France
+groß=big
+das Haus=house
+Italien=Italy
+klein=small
+Köln=Cologne
+komfortabel=comfortable / luxurious
+das Land=country
+auf dem Lande=in the countryside
+laut=noisy
+Österreich=Austria
+schön=nice / beautiful
+die Schweiz=Switzerland
+Spanien=Spain
+die Stadt=town / city
+die Stadtmitte=town centre
+der Strand=beach
+der Vorort=suburb
+die Vorstadt=suburb
+Wien=Vienna
+wohnen=to live / reside
+die Wohnung=flat / apartment`),
+ '1.1b':vocabularyPage(42,`
+angenehm=pleasant
+das Arbeitszimmer=study
+das Badezimmer=bathroom
+der Balkon=balcony
+bequem=comfortable
+das Bett=bed
+das Büro=office
+bunt=colourful
+dunkel=dark
+das Erdgeschoss=ground floor
+der Flur=hallway
+der Garten=garden
+hässlich=ugly
+die Hauptstadt=capital city
+hell=bright
+der Herd=cooker / stove
+hübsch=pretty
+die Kommode=chest of drawers
+die Küche=kitchen
+mieten=to rent
+ordentlich=tidy
+das Regal=shelf / shelving unit
+ruhig~still=quiet
+das Schlafzimmer=bedroom
+schön=nice / beautiful
+der Stock=floor / storey
+streichen=to paint
+der Teppich=carpet
+die Toilette~das Klo=toilet
+unangenehm=unpleasant
+unbequem=uncomfortable
+unordentlich=untidy
+das Wohnzimmer=living room
+das Zimmer=room`),
+ '1.1c':vocabularyPage(42,`
+arbeiten=to work
+aufräumen=to tidy up
+bekommen=to get / receive
+das Buch=book
+der Computer=computer
+das Computerspiel=computer game
+fernsehen=to watch TV
+Flöte spielen~Schlagzeug spielen~Trompete spielen=to play the flute~to play the drums~to play the trumpet
+Fotos machen=to take photos
+fotografieren=to take photos
+die Geschwister=siblings
+glauben=to believe
+die Hausaufgaben=homework
+kochen=to cook
+einen Krimi sehen=to watch a thriller
+eine Kurzgeschichte schreiben=to write a short story
+leider=unfortunately
+leise=quiet / quietly
+lieben=to love
+machen=to do / make
+das Malen=painting
+Musik hören~Popmusik hören~Rockmusik hören=to listen to music~to listen to pop music~to listen to rock music
+nachmittags=in the afternoons
+nach oben gehen=to go upstairs
+das Singen=singing
+Spaß machen=to be fun
+teilen=to share
+verbringen=to spend time
+das Zeichnen=drawing
+die Zeit=time
+zusammen=together`),
+ '1.1d':vocabularyPage(42,`
+der Baum=tree
+bei=at / with
+der Berg=mountain
+besuchen=to visit
+bevorzugen=to prefer
+der Blick=view
+die Blume=flower
+die Decke=ceiling
+draußen=outside
+einladen=to invite
+das Esszimmer=dining room
+das Fenster=window
+der Fußboden=floor
+das Gas=gas
+die Garage=garage
+die Gartenarbeit=gardening
+die Größe=size
+die Heizung=heating
+der Keller=cellar / basement
+das Kind=child
+die Klimatisierung=air conditioning
+der Kühlschrank=refrigerator / fridge
+die Landschaft=landscape
+mit=with
+die Möbel=furniture
+in der Nähe=nearby
+reizend=charming
+sauber=clean
+der Spiegel=mirror
+die Terrasse=terrace
+der Tiefkühlschrank=freezer
+der Tisch=table
+die Treppe=stairs
+verkaufen=to sell
+die Wand=wall
+das Waschbecken=sink / washbasin
+die Waschmaschine=washing machine
+der Wasserhahn=tap
+wunderschön=beautiful / wonderful`),
+ '1.2a':vocabularyPage(43,`
+die Biologie=biology
+die Chemie=chemistry
+das Deutsch=German
+Dienstag=Tuesday
+dienstags=on Tuesdays
+Donnerstag=Thursday
+donnerstags=on Thursdays
+das Englisch=English
+die Erdkunde=geography
+erst=first
+das Fach=school subject
+das Französisch=French
+Freitag=Friday
+freitags=on Fridays
+die Geschichte=history
+kurz=short
+lang=long
+langweilig=boring
+lernen=to learn
+Lieblings-=favourite (prefix)
+die Mathe=maths
+Mittwoch=Wednesday
+mittwochs=on Wednesdays
+Montag=Monday
+montags=on Mondays
+die Pause=break
+die Physik=physics
+das Spanisch=Spanish
+die Sprache=language
+die Stunde=lesson / hour
+der Stundenplan=timetable
+der Tag=day
+um … Uhr=at … o’clock`),
+ '1.2b':vocabularyPage(43,`
+anfangen=to start
+Angst haben=to be afraid
+beginnen=to begin / start
+dauern=to last
+der Direktor~die Direktorin=headteacher / director
+einfach=easy / simple
+enden=to end
+der Freund~die Freundin=friend
+freundlich=friendly
+früh=early
+die Hauptschule=secondary school (a type in German-speaking countries)
+helfen=to help
+die Imbissstube=snack bar
+der Klassenkamerad=classmate
+die Kleidung=clothing
+der Lehrer~die Lehrerin=teacher
+die Mittagspause=lunch break
+die Naturwissenschaften=natural sciences
+die Oberstufe=upper school / sixth form
+die Schularbeit=schoolwork
+der Schulbus=school bus
+die Schule=school
+der Schüler~die Schülerin=pupil
+der Schultag=school day
+schwer=difficult / heavy
+schwierig=difficult
+sich Sorgen machen=to worry
+streng=strict
+tragen=to carry / wear
+der Unterricht=lessons / class`),
+ '1.2c':vocabularyPage(43,`
+altmodisch=old-fashioned
+die Aula=school assembly hall
+ausgestattet=equipped
+durch=through
+die Einfahrt~der Eingang=entrance / driveway~entrance
+die Einrichtung=equipment / furnishings
+entlang=along
+der Fußballplatz=football pitch
+das Gebäude=building
+groß=big
+der Hof=yard
+das Klassenzimmer=classroom
+das Labor=laboratory
+das Lehrerzimmer=staffroom
+der Musiksaal=music room
+der Platz=seat / space
+schmutzig=dirty
+die Schulbibliothek=school library
+der Schulhof=school playground / yard
+der Tennisplatz=tennis court
+das Theaterstück=play (theatre)
+die Turnhalle=gym / sports hall
+der Umkleideraum=changing room`),
+ '1.2d':vocabularyPage(43,`
+der Aufenthalt=stay
+der Ausflug=trip / excursion
+der Austausch=exchange
+der Austauschpartner~die Austauschpartnerin=exchange partner
+die Austauschschule=exchange school
+bestehen=to pass an exam
+deutschsprachig=German-speaking
+erleben=to experience
+das Erlebnis=experience
+erschöpft=exhausted
+die Frage=question
+der Gast=guest
+die Gastfamilie=host family
+gastfreundlich=welcoming / hospitable
+gewöhnlich=usually
+das Heft=notebook / exercise book
+das Heimweh=homesickness
+der Kuli=pen / ballpoint pen
+mitbringen=to bring along
+die Partnerschule=partner school
+das Pflichtfach=compulsory subject
+pünktlich=on time / punctual
+das Resultat=result
+die S-Bahn=suburban train
+die Schreibwaren=stationery
+der Schüleraustausch=school exchange
+das Schulfest=school party / festival
+das Schulleben=school life
+der Speisesaal=dining hall
+typisch=typical
+die U-Bahn=underground / metro
+der Unterschied=difference
+verantwortlich=responsible
+das Wahlfach=optional subject
+das Zeugnis~das Schulzeugnis=school report
+der Zug=train`),
+ '1.3a':vocabularyPage(44,`
+das Abendessen=dinner / evening meal
+der Apfel=apple
+die Apfelsine=orange
+der Blumenkohl=cauliflower
+die Birne=pear
+das Brot=bread
+das Brötchen=bread roll
+das Ei=egg
+ekelhaft=disgusting
+die Erbse=pea
+essen=to eat
+das Frühstück=breakfast
+frühstücken=to have breakfast
+das Gemüse=vegetables
+das Glas=glass
+die Gurke=cucumber
+der Kaffee=coffee
+die Karotte~die Möhre=carrot
+die Kartoffel=potato
+der Käse=cheese
+kohlensäurehaltig=fizzy / carbonated
+lecker=delicious
+die Mahlzeit=meal
+die Melone=melon
+die Milch=milk
+das Mittagessen=lunch
+die Nachspeise=dessert
+das Obst=fruit
+die Pommes (frites)=chips / fries
+der Salat=salad
+der Schinken=ham
+die Süßigkeit=sweet
+der Tee=tea
+die Tomate=tomato
+die Torte=cake / gateau
+die Traube=grape
+trinken=to drink
+ungesund=unhealthy
+das Wasser=water`),
+ '1.3b':vocabularyPage(44,`
+die Banane=banana
+die Bedienung=service
+die Cola=cola
+das Eis=ice cream
+die Erdbeeren=strawberries
+der Fisch=fish
+frisch=fresh
+der Geschmack=taste
+das Getränk=drink
+die Krabbe=crab
+der Kuchen=cake
+lieber=rather / preferably
+die Limonade=lemonade
+die Meeresfrüchte=seafood
+das Mineralwasser=mineral water
+die Muscheln=mussels
+die Nudeln=pasta / noodles
+die Pizza=pizza
+das Restaurant=restaurant
+riesig~enorm=enormous
+das Sauerkraut=sauerkraut
+das Schnitzel=schnitzel / escalope
+der Sprudel=sparkling water
+der Teller=plate
+unglaublich=unbelievable
+der Vegetarier~die Vegetarierin=vegetarian
+die Welt=world
+das Wetter=weather`),
+ '1.3c':vocabularyPage(44,`
+der Anfang=start / beginning
+ausgewogen=balanced
+der Bericht=report
+billig=cheap
+die Energie=energy
+sich ernähren=to feed oneself / to live on
+die Ernährung=nutrition / diet
+faul=lazy
+fühlen~sich fühlen=to feel~to feel (one’s condition)
+gesund=healthy
+glücklich=happy
+kaufen=to buy
+krank=ill
+die Krankheit=illness
+die Leute=people
+nötig=necessary
+notwendig=necessary
+schnell=fast / quickly
+der Stress=stress
+der Supermarkt=supermarket
+teuer=expensive
+wichtig=important
+der Zucker=sugar`),
+ '1.4a':vocabularyPage(44,`
+alles=everything
+der Arm=arm
+der Arzt~die Ärztin=doctor
+das Auge=eye
+der Bauch=stomach / belly
+das Bein=leg
+bleiben=to stay
+brauchen=to need
+die Brust=chest
+erkältet sein=to have a cold
+Fieber haben=to have a fever
+furchtbar=terrible
+es gibt=there is / there are
+die Grippe=flu
+gute Besserung=get well soon
+der Hals=throat / neck
+die Haut=skin
+der Kopf=head
+der Körper=body
+leid tun=to feel sorry for / to pity
+der Magen=stomach
+das Medikament=medicine
+müssen=to have to / must
+nehmen=to take
+das Ohr=ear
+Rückenschmerzen=backache
+die Schmerzen=pain / aches
+die Schulter=shoulder
+die Tablette=tablet
+der Teil=part
+weh tun=to hurt
+Wie geht es dir?=How are you?
+der Zahn=tooth
+der Zahnarzt~die Zahnärztin=dentist
+der Zeh=toe`),
+ '1.4b':vocabularyPage(45,`
+der Anruf=call
+anrufen=to call
+anstrengend=strenuous / tiring
+die Apotheke=chemist’s / pharmacy
+bald=soon
+besser gehen=to feel better
+ein bisschen=a little bit
+bringen=to bring
+die Couch=sofa / couch
+sich erholen=to recover
+gestern=yesterday
+lieber=rather / preferably
+schlecht=bad / badly
+schlimm=bad / serious
+schmecken=to taste
+schwindlig=dizzy
+seit=since / for
+stark=strong
+der Termin=appointment
+einem übel sein=to feel sick / nauseous
+warten=to wait
+wenig=little / not much`),
+ '1.4c':vocabularyPage(45,`
+sich bewegen=to move
+faulenzen=to laze around
+der Federball=badminton / shuttlecock
+fit bleiben=to keep fit
+der Handball=handball
+hart=hard
+joggen=to jog
+können=to be able to / can
+die Leichtathletik=athletics
+der Lieblingssport=favourite sport
+die Mannschaft=team
+mögen=to like
+die Motivation=motivation
+professionell=professional
+punkten=to score a point
+Rad fahren=to cycle
+reiten=to ride (a horse)
+das Rennen gewinnen=to win the race
+schwimmen=to swim
+segeln=to sail
+Ski laufen=to go skiing
+Sport treiben=to do sport
+die Sportart=type of sport
+täglich=daily
+das Team=team
+trainieren=to train
+den Wettbewerb gewinnen=to win the competition
+wollen=to want to`),
+ '1.4d':vocabularyPage(45,`
+abnehmen=to lose weight
+aufgeben=to give up
+ausgehen=to go out
+auslachen=to laugh at
+sich ausruhen=to rest / relax
+dick=fat / thick
+enthalten=to contain
+die Essgewohnheit=eating habit
+der Fitnessmuffel=someone who dislikes exercise / couch potato
+das Gericht=dish / meal / course
+gesundheitsbewusst=health-conscious
+der Konsum=consumption
+mitmachen=to take part
+müde=tired
+nervös=nervous
+rauchen=to smoke
+vegetarisch=vegetarian
+die Vitamine=vitamins
+ziemlich=quite
+zubereiten=to prepare
+zufrieden=satisfied
+zunehmen=to put on weight
+zurzeit=at the moment`),
+};
+
+// Section titles and page references checked against the supplied textbook.
+// The revision notes, examples and activities below are original adaptations.
+const source={status:'verified',revision:'textbook-vocabulary-42-45-v2',title:'Cambridge IGCSE German · Second Edition',pageRange:[1,44],printedPageRange:[12,41],pdfPageRange:[14,43],vocabularyPrintedPageRange:[42,45],vocabularyPdfPageRange:[44,47],sectionRange:['1.1a','1.4d'],note:'All 15 sections from 1.1a through 1.4d, plus every vocabulary entry from printed pages 42–45 (PDF pages 44–47). Vocabulary is grouped by the book’s section labels; combined entries are split into individual cards and dictionary forms are normalized where needed. Existing revision cards are retained. Lessons use book pages 12–41 (PDF pages 14–43). Publisher listening audio and the full textbook are not included.'};
+const chapters=[{id:'1.1',title:'My home',icon:'home',color:'sage',pages:[12,19]},{id:'1.2',title:'My school',icon:'book',color:'sky',pages:[20,27]},{id:'1.3',title:'My eating habits',icon:'sun',color:'peach',pages:[28,33]},{id:'1.4',title:'My body and my health',icon:'heart',color:'lavender',pages:[34,41]}];
+const vocabulary=text=>text.split('|').map(pair=>pair.split('='));
+// Match a headword already taught with an article or singular/plural pair.
+// Existing cards keep their IDs, wording and order so saved reviews remain valid.
+const vocabularyKey=text=>text.normalize('NFC').trim().toLowerCase().replace(/^(der|die|das)\s+/,'').replace(/[.!?…]/g,'').replace(/\s+/g,' ');
+const withFullVocabulary=u=>{
+ const chapter=chapters.find(c=>c.id===u.id.slice(0,3)),book=textbookVocabulary[u.id];
+ const deck=u.words.map(([front,back],i)=>({id:`${u.id}-${i}`,unit:u.id,front,back}));
+ const byWord=new Map();
+ for(const card of deck)for(const alias of [card.front,...card.front.split(' / ')])byWord.set(vocabularyKey(alias),card);
+ const vocabularyCoverage=book.entries.map(entry=>({row:entry.row,terms:entry.terms.map((term,i)=>{
+  let card=byWord.get(vocabularyKey(term));
+  if(!card){card={id:`${u.id}-vocab-${entry.row}-${i+1}`,unit:u.id,front:term,back:entry.meanings[i]};deck.push(card);byWord.set(vocabularyKey(term),card);}
+  return {term,cardId:card.id};
+ })}));
+ return {...u,words:deck.map(c=>[c.front,c.back]),deck,vocabularyCoverage,vocabularyPage:book.page,code:u.id,chapter:chapter.id,icon:chapter.icon,color:chapter.color,minutes:15,pages:[u.page,u.page+1],pdfPages:[u.page+2,u.page+3]};
+};
+const units=[
+ {id:'1.1a',title:'Wo ich wohne',subtitle:'Where I live',page:12,description:'Describe your location and type of home; use indefinite articles in the nominative and accusative.',
+ lesson:{title:'Start with where you live.',intro:'Give your country, town or region, then describe your home. Ich wohne introduces where you live. Es gibt introduces something that is there.',rule:'A masculine noun changes from ein to einen in the accusative: Das ist ein Garten → Ich habe einen Garten. Feminine eine and neuter ein stay the same.',points:['Nominative: ein Garten, eine Wohnung, ein Haus. Accusative: einen Garten, eine Wohnung, ein Haus.','Use in with towns and most countries: in Berlin, in Deutschland. Some countries take an article: in der Schweiz.','Useful location phrases: auf dem Land, am Meer, an der Küste, in den Bergen.'],examples:[['Ich wohne in einer Kleinstadt.','I live in a small town.'],['Wir haben ein Reihenhaus.','We have a terraced house.'],['Es gibt einen Garten.','There is a garden.']],tip:'Learn the noun with its article. It helps you choose ein, eine or einen later.'},
+ words:vocabulary('wohnen=to live / reside|das Haus=house|die Wohnung=flat / apartment|das Einfamilienhaus=detached house|die Doppelhaushälfte=semi-detached house|das Reihenhaus=terraced house|der Bauernhof=farm|die Stadt=town / city|die Kleinstadt=small town|das Dorf=village|der Vorort=suburb|das Stadtzentrum=town centre|auf dem Land=in the countryside|am Meer=by the sea|an der Küste=on the coast|in den Bergen=in the mountains|Deutschland=Germany|Österreich=Austria|die Schweiz=Switzerland|der Garten=garden'),
+ speaking:'Describe where you live: country, town or village, surroundings and type of home. Ask a partner the same questions.',writing:'Write 50–70 words introducing where you live and your home. Include one sentence with ich habe and one with es gibt.',
+ exercises:[['fill','Es gibt ___ Garten.',['einen'],'Garten is masculine; es gibt takes the accusative.'],['translate','Translate: in the countryside',['auf dem Land'],'Auf dem Land means in the countryside.'],['order','Build: I live in a village.',['Ich','wohne','in','einem','Dorf'],'The verb wohne is second; in einem Dorf describes location.'],['choice','Which phrase means a terraced house?',['ein Reihenhaus','eine Wohnung','ein Bauernhof','ein Vorort'],'Reihenhaus is a house in a row.'],['fill','Wir haben ___ Wohnung.',['eine'],'Wohnung is feminine: eine in both nominative and accusative.'],['translate','Translate: Germany',['Deutschland'],'Country names such as Deutschland usually appear without an article.'],['order','Build: We have a house.',['Wir','haben','ein','Haus'],'Haus is neuter, so ein stays ein.'],['choice','Choose the correct phrase after Ich habe …',['einen Garten','ein Garten','einem Garten','einer Garten'],'A masculine direct object uses einen.']]},
+ {id:'1.1b',title:'Mein Zuhause',subtitle:'Rooms, furniture & opinions',page:14,description:'Describe rooms and furniture, express opinions, and use definite articles.',
+ lesson:{title:'Give your home some detail.',intro:'Name rooms and describe their size, atmosphere and light. Use mein Lieblingszimmer to introduce your favourite room, then explain why you like it.',rule:'Definite articles in the accusative: der → den, die → die, das → das. Compare Der Flur ist hell with Ich mag den Flur.',points:['Nominative identifies the subject; the accusative often identifies the direct object.','After sein, adjectives have no added ending: Die Küche ist modern. Das Zimmer ist klein.','Join a description and a reason with denn: Ich mag das Wohnzimmer, denn es ist gemütlich.'],examples:[['Mein Schlafzimmer ist hell und ruhig.','My bedroom is bright and quiet.'],['Ich mag die Küche.','I like the kitchen.'],['Wir haben den Balkon im ersten Stock.','We have the balcony on the first floor.']],tip:'Keep the article attached to each room name when you revise.'},
+ words:vocabulary('das Wohnzimmer=living room|das Schlafzimmer=bedroom|das Badezimmer=bathroom|das Esszimmer=dining room|das Arbeitszimmer=study|die Küche=kitchen|der Flur=hallway|der Balkon=balcony|die Terrasse=terrace|der Keller=cellar / basement|das Erdgeschoss=ground floor|im ersten Stock=on the first floor|der Tisch=table|der Stuhl=chair|das Bett=bed|hell=bright|dunkel=dark|ruhig=quiet|gemütlich=cosy|ordentlich=tidy'),
+ speaking:'Give a short tour of your home. Name three rooms and explain which one you prefer.',writing:'Describe your favourite room in 50–70 words, including furniture, two adjectives and a reason for your opinion.',
+ exercises:[['fill','Ich mag ___ Flur. (der)',['den'],'A masculine direct object takes den.'],['translate','Translate: the bedroom',['das Schlafzimmer'],'Schlafzimmer is neuter.'],['order','Build: The kitchen is bright.',['Die','Küche','ist','hell'],'The adjective hell stays unchanged after ist.'],['choice','What does gemütlich mean?',['cosy','dark','untidy','noisy'],'Gemütlich describes a comfortable, cosy atmosphere.'],['fill','Das Zimmer ist ___. (quiet)',['ruhig'],'Ruhig is used without an ending after ist.'],['translate','Translate: on the first floor',['im ersten Stock'],'Im ersten Stock locates a room on the first floor.'],['order','Build: I like the living room.',['Ich','mag','das','Wohnzimmer'],'Das stays das in the accusative.'],['choice','Which accusative article replaces der?',['den','dem','die','das'],'Only the masculine definite article changes in the accusative.']]},
+ {id:'1.1c',title:'Was ich zu Hause mache',subtitle:'Activities at home',page:16,description:'Talk about activities at home with regular present-tense verbs and personal pronouns.',
+ lesson:{title:'What happens at home?',intro:'Connect an activity to a room and say who joins you. Add gern or nicht gern to explain what you enjoy.',rule:'Regular present tense: remove -en from the infinitive and add -e, -st, -t, -en, -t, -en for ich, du, er/sie/es, wir, ihr, sie/Sie.',points:['Spielen: ich spiele, du spielst, er spielt, wir spielen, ihr spielt, sie spielen.','Sie can mean she, they or formal you. The verb form and context show which meaning is intended.','Gern follows the conjugated verb in a simple sentence: Ich koche gern.'],examples:[['Ich höre Musik in meinem Zimmer.','I listen to music in my room.'],['Wir spielen zusammen.','We play together.'],['Meine Schwester kocht gern.','My sister likes cooking.']],tip:'Say the full sentence aloud; practising the pronoun and ending together makes the pattern easier to remember.'},
+ words:vocabulary('spielen=to play|kochen=to cook|malen=to paint|hören=to hear / listen|lernen=to learn|machen=to do / make|teilen=to share|sagen=to say|lieben=to love|glauben=to believe|die Musik=music|die Hausaufgaben=homework|zusammen=together|allein=alone|gern=gladly / with pleasure|nicht gern=not gladly|zu Hause=at home|jeden Tag=every day|mit Freunden=with friends|mit meiner Familie=with my family'),
+ speaking:'Say what you do in three different rooms, who you spend time with and which activities you enjoy.',writing:'Write 80–90 words about your home, your favourite room and the activities you like and dislike doing there.',
+ exercises:[['fill','Du ___ gern. (spielen)',['spielst'],'Du takes the regular ending -st.'],['translate','Translate: together',['zusammen'],'Zusammen means together.'],['order','Build: I like cooking.',['Ich','koche','gern'],'Gern turns an activity into something you like doing.'],['choice','Which form completes Wir ___ Musik?',['hören','hört','hörst','höre'],'Wir uses the -en form hören.'],['fill','Ihr ___ Deutsch. (lernen)',['lernt'],'Ihr takes -t.'],['translate','Translate: at home',['zu Hause','zuhause'],'Zu Hause describes being at home.'],['order','Build: She plays in the garden.',['Sie','spielt','im','Garten'],'Spielt is the third-person singular form.'],['choice','Which pronoun matches kochst?',['du','ich','wir','ihr'],'The -st ending belongs to du.']]},
+ {id:'1.1d',title:'Eine Beschreibung von meinem Zuhause',subtitle:'Detailed descriptions & the dative',page:18,description:'Describe your home and surroundings using dative articles and location phrases.',
+ lesson:{title:'Put everything in its place.',intro:'Extend a simple description with surroundings, furniture and precise locations. The dative appears after several common prepositions and with in when describing a fixed location.',rule:'Dative definite articles: der → dem, die → der, das → dem, plural die → den. Dative plural nouns usually add -n unless already ending in -n or -s.',points:['Aus, bei, mit, nach, seit, von and zu take the dative.','In answers where? with the dative: im Zimmer, in der Küche. Im means in dem.','Indefinite dative articles are einem, einer, einem: mit einem Freund, in einer Wohnung.'],examples:[['Der Tisch steht in der Küche.','The table is in the kitchen.'],['Ich wohne mit meiner Familie.','I live with my family.'],['Vom Fenster sehe ich den Garten.','From the window I can see the garden.']],tip:'Distinguish location from movement into somewhere: this lesson practises where things are.'},
+ words:vocabulary('das Fenster=window|die Tür=door|die Wand=wall|das Dach=roof|die Treppe=stairs|der Schrank=cupboard / wardrobe|das Sofa=sofa|der Teppich=carpet|der Schreibtisch=desk|die Lampe=lamp|die Aussicht=view|die Umgebung=surroundings|in der Nähe=nearby|neben=next to|mit=with|von=from / of|bei=at / with|aus=out of / from|das Traumzimmer=dream room|bequem=comfortable'),
+ speaking:'Describe a room so that a partner could sketch it. Mention furniture, colours and what you can see from the window.',writing:'Design your dream room in 70–90 words. Describe where it is, its furniture and colours, and the activities you would do there.',
+ exercises:[['fill','Der Tisch steht in ___ Küche. (die)',['der'],'A fixed location with in takes the dative: in der Küche.'],['translate','Translate: the window',['das Fenster'],'Fenster is neuter.'],['order','Build: I live with my family.',['Ich','wohne','mit','meiner','Familie'],'Mit always takes the dative.'],['choice','What is im short for?',['in dem','in den','in das','in der'],'Im is the contraction of in dem.'],['fill','Ich spiele mit ___ Freund. (ein)',['einem'],'Freund is masculine; mit takes einem in the dative.'],['translate','Translate: the desk',['der Schreibtisch'],'Schreibtisch is a masculine noun.'],['order','Build: The sofa is in the living room.',['Das','Sofa','steht','im','Wohnzimmer'],'Im Wohnzimmer describes a fixed location.'],['choice','Which preposition always takes the dative?',['mit','für','ohne','durch'],'Mit takes the dative; the other three take the accusative.']]},
+ {id:'1.2a',title:'Mein Stundenplan',subtitle:'Subjects, days & lesson times',page:20,description:'Discuss your timetable, school subjects and preferences using days, times and ordinal numbers.',
+ lesson:{title:'Walk through your timetable.',intro:'Say which subjects you have and when. Add your favourite subject and explain what you find interesting or difficult.',rule:'Use am with a particular day, um with a clock time, and in der … Stunde for a lesson: am Montag, um neun Uhr, in der ersten Stunde.',points:['Ordinal forms include erste, zweite, dritte, vierte and fünfte. After in der, use ersten, zweiten, dritten and so on.','Montags means on Mondays, a repeated routine. Am Montag means on Monday.','Ich finde + subject + adjective gives an opinion: Ich finde Geschichte interessant.'],examples:[['Am Dienstag habe ich Deutsch.','On Tuesday I have German.'],['In der dritten Stunde haben wir Sport.','In the third lesson we have PE.'],['Mein Lieblingsfach ist Kunst.','My favourite subject is art.']],tip:'Listen for ie and ei: vier has a long ee sound; drei has an eye sound.'},
+ words:vocabulary('der Stundenplan=timetable|das Fach=subject|das Lieblingsfach=favourite subject|die Stunde=hour / lesson|Deutsch=German|Englisch=English|Französisch=French|Mathematik=mathematics|Geschichte=history|Erdkunde=geography|Biologie=biology|Chemie=chemistry|Physik=physics|Kunst=art|Sport=PE / sport|Montag=Monday|Dienstag=Tuesday|Mittwoch=Wednesday|Donnerstag=Thursday|Freitag=Friday|interessant=interesting|schwierig=difficult|langweilig=boring|einfach=easy'),
+ speaking:'Describe one school day from your timetable. Include lesson times and explain which subject you like best.',writing:'Write five connected sentences about your timetable, including a day, two lesson numbers, a clock time and an opinion.',
+ exercises:[['fill','___ Montag habe ich Deutsch.',['Am'],'Use am before a particular day.'],['translate','Translate: the timetable',['der Stundenplan'],'Stundenplan combines lessons and a plan.'],['order','Build: My favourite subject is art.',['Mein','Lieblingsfach','ist','Kunst'],'Lieblingsfach is the subject; ist is second.'],['choice','What does in der dritten Stunde mean?',['in the third lesson','in the first lesson','at three o’clock','for three hours'],'Dritten is the ordinal third, not a clock time.'],['fill','Der Unterricht beginnt ___ acht Uhr.',['um'],'Use um with a precise clock time.'],['translate','Translate: Wednesday',['Mittwoch'],'Mittwoch is Wednesday.'],['order','Build: I find history interesting.',['Ich','finde','Geschichte','interessant'],'An adjective after finden describes your opinion of the subject.'],['choice','Which phrase means on Mondays?',['montags','mittwochs','am Morgen','um Montag'],'Montags describes a recurring Monday routine.']]},
+ {id:'1.2b',title:'Ein typischer Schultag',subtitle:'School routines & irregular verbs',page:22,description:'Describe a typical school day and practise common irregular present-tense verbs.',
+ lesson:{title:'From the first bell to home time.',intro:'Describe when your school day starts, what happens during breaks and how the day ends. Some common verbs change their vowel with du and er/sie/es.',rule:'Present-tense vowel changes include helfen → du hilfst / er hilft, lesen → du liest / er liest, sprechen → du sprichst / er spricht, and essen → du isst / er isst.',points:['The wir, ihr and sie plural forms usually keep the original vowel: wir lesen, ihr lest, sie lesen.','Sein and haben have special forms: ich bin, du bist, er ist; ich habe, du hast, er hat.','German halb counts towards the next hour: halb acht is 7:30, halb drei is 2:30.'],examples:[['Der Unterricht beginnt um halb acht.','Lessons begin at half past seven.'],['In der Pause isst sie ein Brötchen.','During the break she eats a bread roll.'],['Unser Lehrer hilft uns.','Our teacher helps us.']],tip:'Learn irregular verbs as small sets: lesen, du liest, er liest.'},
+ words:vocabulary('der Schultag=school day|der Unterricht=lessons / teaching|die Pause=break|beginnen=to begin|enden=to end|helfen=to help|lesen=to read|sprechen=to speak|essen=to eat|sehen=to see|vergessen=to forget|haben=to have|sein=to be|die Kantine=canteen|die Bibliothek=library|der Lehrer=male teacher|die Lehrerin=female teacher|halb acht=half past seven|nach der Schule=after school|pünktlich=punctual / on time'),
+ speaking:'Describe the beginning and end of your school day, your breaks and one thing you enjoy.',writing:'Write a short blog about your ideal school day. Include times, subjects, teachers and what students do during breaks.',
+ exercises:[['fill','Er ___ ein Buch. (lesen)',['liest'],'Lesen changes e to ie for du and er/sie/es.'],['translate','Translate: the break',['die Pause'],'Pause is feminine.'],['order','Build: Our teacher helps us.',['Unser','Lehrer','hilft','uns'],'Helfen becomes hilft with er or a singular teacher.'],['choice','What time is halb acht?',['7:30','8:30','8:00','7:00'],'Halb acht is halfway towards eight: 7:30.'],['fill','Du ___ Deutsch. (sprechen)',['sprichst'],'Sprechen changes e to i with du.'],['translate','Translate: after school',['nach der Schule'],'Nach takes the dative: der Schule.'],['order','Build: She eats in the break.',['Sie','isst','in','der','Pause'],'Essen becomes isst with sie meaning she.'],['choice','Which form completes Wir ___ ein Buch?',['lesen','liest','lese','lest'],'Wir uses lesen, with no vowel change.']]},
+ {id:'1.2c',title:'Meine Schulgebäude',subtitle:'School buildings & facilities',page:24,description:'Describe school facilities and use accusative prepositions such as für, ohne and durch.',
+ lesson:{title:'Find your way around school.',intro:'Name school rooms, explain what they are for and describe their condition. You can use these phrases to compare your own school with an ideal school.',rule:'Für, ohne, durch, gegen, um and bis are accusative prepositions. Masculine der and ein become den and einen: durch den Schulhof, für einen Musiksaal.',points:['Feminine die and neuter das stay unchanged in the accusative: für die Aula, ohne das Labor.','Entlang normally follows an accusative noun when describing a route: den Korridor entlang.','Describe facilities with modern, hell, ruhig or gut ausgestattet. Give a reason for your opinion.'],examples:[['Wir gehen durch den Schulhof.','We walk through the school playground.'],['Das ist ein Raum für die Lehrer.','That is a room for the teachers.'],['Unsere Bibliothek ist gut ausgestattet.','Our library is well equipped.']],tip:'Für is followed by the accusative even when its English meaning is simply for.'},
+ words:vocabulary('das Schulgebäude=school building|das Schulbüro=school office|das Lehrerzimmer=staffroom|der Schulhof=school playground|das Klassenzimmer=classroom|der Musiksaal=music room|der Umkleideraum=changing room|die Turnhalle=gym / sports hall|die Bibliothek=library|die Aula=assembly hall|das Labor=laboratory|das Computerzimmer=computer room|der Eingang=entrance|der Korridor=corridor|das Treppenhaus=stairwell|gut ausgestattet=well equipped|modern=modern|altmodisch=old-fashioned|durch=through|ohne=without|für=for|entlang=along'),
+ speaking:'Give an exchange student a tour of your school. Describe at least four facilities and say what you like or would improve.',writing:'Write a positive description of your school for a poster. Include its buildings, facilities and surroundings, plus your opinions.',
+ exercises:[['fill','Wir gehen durch ___ Schulhof. (der)',['den'],'Durch takes the accusative, so der Schulhof becomes den Schulhof.'],['translate','Translate: the staffroom',['das Lehrerzimmer'],'Lehrerzimmer is the room for teachers.'],['order','Build: We walk along the corridor.',['Wir','gehen','den','Korridor','entlang'],'Entlang follows den Korridor here.'],['choice','Which room is die Turnhalle?',['the sports hall','the staffroom','the laboratory','the school office'],'Turnhalle is a gym or sports hall.'],['fill','Das Geld ist für ___ neuen Musiksaal. (ein)',['einen'],'Für requires the accusative; Musiksaal is masculine.'],['translate','Translate: well equipped',['gut ausgestattet'],'Gut ausgestattet is useful for describing school facilities.'],['order','Build: We have a modern library.',['Wir','haben','eine','moderne','Bibliothek'],'Bibliothek is feminine and the direct object of haben.'],['choice','Which phrase is grammatically correct?',['ohne einen Computer','ohne einem Computer','ohne ein Computer','ohne einer Computer'],'Ohne takes the accusative: einen Computer.']]},
+ {id:'1.2d',title:'Das Schulleben in den deutschsprachigen Ländern',subtitle:'School exchanges & asking questions',page:26,description:'Discuss school life and exchanges, form questions and compare school experiences.',
+ lesson:{title:'Ask, compare, discover.',intro:'An exchange is a chance to ask about a different school routine. Use questions to learn about lesson times, clothing, meals, trips and your host family. Routines vary between schools.',rule:'In a yes/no question, the conjugated verb comes first: Tragt ihr eine Uniform? With a question word, the verb follows it: Wann beginnt der Unterricht?',points:['Question words: wer (who), was (what), wann (when), wo (where), wohin (where to), wie (how), warum (why).','Wo asks for location; wohin asks for a destination.','Seit wann asks since when: Seit wann lernst du Deutsch?'],examples:[['Wann beginnt eure Schule?','When does your school start?'],['Habt ihr eine Kantine?','Do you have a canteen?'],['Wohin geht der Ausflug?','Where is the trip going?']],tip:'Use the textbook’s school examples to practise comparisons, rather than assuming every school has the same rules.'},
+ words:vocabulary('das Schulleben=school life|der Schüleraustausch=school exchange|die Gastfamilie=host family|der Austauschpartner=male exchange partner|die Austauschpartnerin=female exchange partner|der Ausflug=trip / excursion|die Schuluniform=school uniform|die Kleidung=clothes|die Schreibwaren=stationery|das Heimweh=homesickness|aufgeregt=excited / nervous|erschöpft=exhausted|verantwortlich=responsible|wer=who|wann=when|warum=why|wohin=where to|seit wann=since when|vergleichen=to compare|anders=different'),
+ speaking:'Role-play an exchange visit. Ask about the school day, meals, uniform, your host family and a planned trip.',writing:'Write 130–140 words to an exchange partner. Describe a typical school day, likes and dislikes, compare school routines and explain your preferences.',
+ exercises:[['fill','___ beginnt der Unterricht? – Um acht Uhr.',['Wann'],'Wann asks when something happens.'],['translate','Translate: the host family',['die Gastfamilie'],'Gastfamilie is the family hosting a visitor.'],['order','Build: Do you have a canteen? (ihr)',['Habt','ihr','eine','Kantine'],'The verb comes first in a yes/no question.'],['choice','Which question word asks for a destination?',['wohin','wo','wer','seit wann'],'Wohin means where to; wo asks where something is.'],['fill','___ lernst du Deutsch? – Weil ich Sprachen mag.',['Warum'],'A reason introduced by weil answers warum.'],['translate','Translate: the school exchange',['der Schüleraustausch'],'Schüleraustausch means a school or pupil exchange.'],['order','Build: What is your host family called? (du)',['Wie','heißt','deine','Gastfamilie'],'Wie heißt …? asks what someone is called.'],['choice','Which is a correctly formed yes/no question?',['Tragt ihr eine Uniform?','Ihr tragt eine Uniform? wann','Eine Uniform ihr tragt?','Tragt eine Uniform ihr?'],'A standard yes/no question begins with the conjugated verb.']]},
+ {id:'1.3a',title:'Essen und trinken',subtitle:'Food, drinks, plurals & kein',page:28,description:'Describe meals and food preferences, learn noun plurals and use kein in the accusative.',
+ lesson:{title:'Talk about what is on your plate.',intro:'Describe what you eat and drink at breakfast, lunch and dinner. Learn food nouns with both their article and plural where useful.',rule:'Kein means no or not a before a noun. Accusative forms: keinen with masculine nouns, keine with feminine and plural nouns, kein with neuter nouns.',points:['Ich esse keinen Käse, keine Birne, kein Brot and keine Eier.','German plurals vary: das Ei → die Eier, der Apfel → die Äpfel, die Kartoffel → die Kartoffeln.','Use zum Frühstück, zum Mittagessen and zum Abendessen to introduce meals.'],examples:[['Zum Frühstück esse ich ein Brötchen.','For breakfast I eat a bread roll.'],['Ich trinke keinen Kaffee.','I do not drink coffee.'],['Wir essen gern Obst und Gemüse.','We like eating fruit and vegetables.']],tip:'Do not add -s to every noun. Learn each plural with the singular.'},
+ words:vocabulary('das Frühstück=breakfast|das Mittagessen=lunch|das Abendessen=dinner / evening meal|das Brot=bread|das Brötchen=bread roll|der Käse=cheese|der Schinken=ham|das Ei / die Eier=egg / eggs|der Apfel / die Äpfel=apple / apples|die Birne=pear|die Kartoffel=potato|das Obst=fruit|das Gemüse=vegetables|das Fleisch=meat|das Hähnchen=chicken|der Fisch=fish|das Wasser=water|die Milch=milk|der Tee=tea|der Kaffee=coffee|der Fruchtsaft=fruit juice|das Glas / die Gläser=glass / glasses'),
+ speaking:'Describe your meals on a typical day and two things you do not eat or drink.',writing:'Keep a short food diary in German. Use three meal phrases, two plurals and two sentences with kein.',
+ exercises:[['fill','Ich trinke ___ Kaffee. (no)',['keinen'],'Kaffee is masculine and the object of trinken.'],['translate','Translate: vegetables',['das Gemüse','Gemüse'],'Gemüse is used as a collective noun.'],['order','Build: For breakfast I eat bread.',['Zum','Frühstück','esse','ich','Brot'],'The meal phrase takes first position; esse stays second.'],['choice','What is the plural of das Ei?',['die Eier','die Eis','die Einen','die Eie'],'Ei has the plural Eier.'],['fill','Ich esse ___ Eier. (no)',['keine'],'Plural accusative uses keine.'],['translate','Translate: the milk',['die Milch'],'Milch is feminine.'],['order','Build: I do not eat cheese.',['Ich','esse','keinen','Käse'],'Käse is masculine: keinen Käse.'],['choice','Which is correct for no bread after essen?',['kein Brot','keinen Brot','keine Brot','keinem Brot'],'Brot is neuter, so the accusative form is kein.']]},
+ {id:'1.3b',title:'Meinungen zum Essen rund um die Welt',subtitle:'Food opinions & comparatives',page:30,description:'Compare foods and eating experiences using comparative adjectives and personal opinions.',
+ lesson:{title:'Make a delicious comparison.',intro:'Discuss foods you have tried or would like to try. Express your own preferences and compare tastes, dishes or meal times without treating an opinion as a rule about a country.',rule:'The comparative usually adds -er; use als for than: frischer als, billiger als. Some adjectives also change their vowel: warm → wärmer, groß → größer.',points:['Irregular comparisons include gut → besser, viel → mehr and gern → lieber.','Scharf becomes schärfer, and nah becomes näher.','Use lieber with an activity: Ich esse lieber Reis. Use besser to describe quality: Das schmeckt besser.'],examples:[['Dieses Brot ist knuspriger als das andere.','This bread is crispier than the other one.'],['Ich esse lieber Gemüse.','I prefer eating vegetables.'],['Die Suppe ist wärmer als der Salat.','The soup is warmer than the salad.']],tip:'Als is used for unequal comparisons. So … wie expresses equality: so frisch wie.'},
+ words:vocabulary('das Gericht=dish / meal|die Mahlzeit=meal|der Teller=plate|die Suppe=soup|der Reis=rice|der Salat=salad|die Meeresfrüchte=seafood|der Vegetarier=male vegetarian|die Vegetarierin=female vegetarian|knusprig=crispy|köstlich=delicious|scharf=spicy / hot|frisch=fresh|warm=warm|billig=cheap|teuer=expensive|besser=better|lieber=preferably / rather|mehr=more|probieren=to try / taste'),
+ speaking:'Compare two foods or dishes you know. Explain which you prefer and give reasons using at least three comparatives.',writing:'Write 80–90 words about foods you enjoy, an experience of a different cuisine and something you would like to try. Include reasons and comparisons.',
+ exercises:[['fill','Diese Suppe ist ___ als die andere. (warm)',['wärmer'],'Warm takes an umlaut and -er in the comparative.'],['translate','Translate: better',['besser'],'Besser is the irregular comparative of gut.'],['order','Build: I prefer eating rice.',['Ich','esse','lieber','Reis'],'Lieber is the comparative of gern.'],['choice','Which word means than in a comparison?',['als','wie','weil','mit'],'Use als after a comparative.'],['fill','Dieses Gericht ist ___ als das andere. (scharf)',['schärfer'],'Scharf becomes schärfer.'],['translate','Translate: seafood',['die Meeresfrüchte','Meeresfrüchte'],'Meeresfrüchte is a plural noun.'],['order','Build: The bread is fresher than the cake.',['Das','Brot','ist','frischer','als','der','Kuchen'],'Frischer als means fresher than.'],['choice','What is the comparative of viel?',['mehr','vieler','meist','vielen'],'Viel has the irregular comparative mehr.']]},
+ {id:'1.3c',title:'Eine ausgewogene Ernährung',subtitle:'Balanced eating & superlatives',page:32,description:'Discuss a balanced diet in German and practise superlative adjective forms.',
+ lesson:{title:'From good to better to best.',intro:'Use the language of food and balanced meals to explain opinions and preferences. Superlatives let you identify what you like most or consider most important.',rule:'Use am …sten for many superlatives: frisch → am frischsten. Some adjectives need -esten, such as heiß → am heißesten. Wichtig becomes am wichtigsten.',points:['Irregular forms include gut → besser → am besten and viel → mehr → am meisten.','Some adjectives add an umlaut: groß → größer → am größten; gesund → gesünder → am gesündesten.','Before a noun, the form changes with the article: das beste Gericht, die wichtigste Mahlzeit.'],examples:[['Mir schmecken Äpfel am besten.','Apples taste best to me.'],['Wasser trinke ich am meisten.','Water is what I drink most.'],['Das ist mein liebstes Gericht.','That is my favourite dish.']],tip:'These activities practise German grammar and opinions about food; explain the reasons behind your own choices.'},
+ words:vocabulary('ausgewogen=balanced|die Ernährung=diet / nutrition|die Portion=portion|das Getränk=drink|die Kohlenhydrate=carbohydrates|der Zucker=sugar|enthalten=to contain|frisch=fresh|hausgemacht=homemade|der Vorteil=advantage|der Nachtisch=dessert|zubereiten=to prepare|die Zutat=ingredient|abwechslungsreich=varied|wichtig=important|gesund=healthy|am besten=best|am meisten=most|am liebsten=most gladly / preferably|am wichtigsten=most important'),
+ speaking:'Discuss foods and drinks you enjoy. Say which you like best, what you consume most often and why variety matters to you.',writing:'Create a short German poster about varied meals. Include food and drink vocabulary, reasons and three superlatives.',
+ exercises:[['fill','Gut, besser, am ___.',['besten'],'Gut has the irregular superlative am besten.'],['translate','Translate: balanced',['ausgewogen'],'Ausgewogen can describe a balanced diet.'],['order','Build: I like apples best.',['Ich','esse','Äpfel','am','liebsten'],'Am liebsten is the superlative of gern.'],['choice','Which is the superlative of viel?',['am meisten','am vielsten','am mehrsten','am vielesten'],'Viel → mehr → am meisten.'],['fill','Was ist dir am ___? (wichtig)',['wichtigsten'],'Wichtig forms am wichtigsten.'],['translate','Translate: the advantage',['der Vorteil'],'Vorteil is masculine.'],['order','Build: This dish tastes best.',['Dieses','Gericht','schmeckt','am','besten'],'Am besten describes how the dish tastes.'],['choice','Choose the correct form before Gericht.',['das beste Gericht','das am besten Gericht','das besten Gericht','das besser Gericht'],'Before the noun with das, use beste.']]},
+ {id:'1.4a',title:'Körperteile und Krankheit',subtitle:'Body parts & describing symptoms',page:34,description:'Name body parts, describe how you feel and use impersonal expressions with es.',
+ lesson:{title:'Say how you feel.',intro:'Learn the words for parts of the body and common symptoms. These phrases help you describe a problem or explain why you cannot join an activity.',rule:'Use tut weh with a singular body part and tun weh with plural body parts: Mein Kopf tut weh. Meine Augen tun weh.',points:['Wie geht es dir? asks how you are. Reply Es geht mir gut / schlecht.','Ich habe Kopfschmerzen means I have a headache. Many pain words end in -schmerzen.','Es gibt means there is / there are. Es tut weh means it hurts.'],examples:[['Mein Hals tut weh.','My throat hurts.'],['Meine Füße tun weh.','My feet hurt.'],['Es geht mir heute nicht gut.','I do not feel well today.']],tip:'German j sounds like English y: ja begins with the sound in yes.'},
+ words:vocabulary('der Kopf=head|der Hals=throat / neck|der Bauch=stomach / belly|der Rücken=back|das Auge / die Augen=eye / eyes|das Ohr / die Ohren=ear / ears|der Zahn / die Zähne=tooth / teeth|der Arm=arm|die Schulter=shoulder|die Hand=hand|der Finger=finger|das Bein=leg|der Fuß / die Füße=foot / feet|der Knöchel=ankle|die Zehe=toe|die Kopfschmerzen=headache|die Halsschmerzen=sore throat|das Fieber=fever|müde=tired|wehtun=to hurt'),
+ speaking:'Role-play a call to a friend. Explain how you feel, describe two symptoms and say why you cannot meet today.',writing:'Write two short symptom descriptions. In each, name a body part, say how you feel and give a reason for cancelling a plan.',
+ exercises:[['fill','Meine Augen ___ weh.',['tun'],'Augen is plural, so use tun.'],['translate','Translate: the back',['der Rücken'],'Rücken is masculine.'],['order','Build: My head hurts.',['Mein','Kopf','tut','weh'],'Kopf is singular, so use tut.'],['choice','What does Wie geht es dir? mean?',['How are you?','Where are you going?','What is your name?','What are you eating?'],'The expression asks about how someone is feeling.'],['fill','Es geht ___ nicht gut. (me)',['mir'],'The expression uses the dative mir.'],['translate','Translate: the feet',['die Füße'],'Fuß becomes Füße in the plural.'],['order','Build: I have a headache.',['Ich','habe','Kopfschmerzen'],'German uses the plural pain word Kopfschmerzen.'],['choice','Which sentence has correct agreement?',['Mein Hals tut weh.','Mein Hals tun weh.','Meine Augen tut weh.','Meine Füße tut weh.'],'Singular Hals takes tut; plural Augen and Füße take tun.']]},
+ {id:'1.4b',title:'Der Körper und seine Krankheiten',subtitle:'Illness descriptions & adverbs',page:36,description:'Explain symptoms and their duration, and describe actions using adjectives as adverbs.',
+ lesson:{title:'Add detail to a description.',intro:'Explain how long you have felt unwell and what you can or cannot do. Words such as langsam, gut and leise describe how an action happens.',rule:'A German adjective used as an adverb has no extra ending: Ich spreche leise. Er geht langsam. Compare English quiet → quietly; German ruhig stays ruhig.',points:['Gut, schlecht, schnell, langsam and regelmäßig can describe actions without changing form.','Seit describes a situation continuing into the present: Ich bin seit zwei Tagen krank.','Mir ist übel means I feel sick / nauseous. Ich bin krank means I am ill.'],examples:[['Ich spreche leise, weil mein Hals weh tut.','I speak quietly because my throat hurts.'],['Heute gehe ich langsam.','Today I walk slowly.'],['Ich bin seit drei Tagen krank.','I have been ill for three days.']],tip:'Focus on describing symptoms and communicating clearly. These are language exercises, not treatment instructions.'},
+ words:vocabulary('krank=ill|die Krankheit=illness|die Erkältung=cold / respiratory illness|die Grippe=flu|die Schmerzen=pain|der Magen=stomach|der Nacken=back of the neck|die Brust=chest|der Arzttermin=doctor’s appointment|die Apotheke=pharmacy|das Medikament=medicine|das Schmerzmittel=painkiller|mir ist übel=I feel sick / nauseous|langsam=slowly|schnell=quickly|leise=quietly|regelmäßig=regularly|schlecht=badly / bad|seit zwei Tagen=for two days|im Bett=in bed'),
+ speaking:'Explain how you feel, how long the symptoms have lasted and which everyday activities are difficult.',writing:'Write an email to a friend describing an illness. Mention symptoms, duration and things you cannot do. Include three adverbs.',
+ exercises:[['fill','Ich spreche ___. (quietly)',['leise'],'An adjective used as an adverb does not gain an ending.'],['translate','Translate: the pharmacy',['die Apotheke'],'Apotheke is feminine.'],['order','Build: I have been ill for two days.',['Ich','bin','seit','zwei','Tagen','krank'],'A continuing situation with seit uses the present tense here.'],['choice','Which sentence uses an adverb correctly?',['Er geht langsam.','Er geht langsame.','Er geht langsamerer.','Er geht langsames.'],'Langsam remains unchanged when describing the action.'],['fill','___ ist übel. (I feel sick.)',['Mir'],'Mir ist übel uses the dative pronoun.'],['translate','Translate: the doctor’s appointment',['der Arzttermin'],'Arzttermin combines doctor and appointment.'],['order','Build: Today I feel bad.',['Heute','geht','es','mir','schlecht'],'Heute comes first; the conjugated verb geht remains second.'],['choice','Which word means regularly?',['regelmäßig','plötzlich','müde','krank'],'Regelmäßig means regularly.']]},
+ {id:'1.4c',title:'Wie man sich fit hält',subtitle:'Sport, fitness & modal verbs',page:38,description:'Discuss sport and fitness routines using present-tense modal verbs.',
+ lesson:{title:'What can you do? What do you want to do?',intro:'Describe the sports you do, your preferences and your plans. Modal verbs express ability, intention, necessity, permission or advice.',rule:'A modal verb is conjugated near the start, while the other verb stays in the infinitive at the end: Ich kann gut schwimmen. Wir wollen Tennis spielen.',points:['Können: ich kann, du kannst, er kann, wir können. Müssen: ich muss, du musst, er muss, wir müssen.','Wollen: ich will, du willst, er will, wir wollen. Dürfen: ich darf, du darfst, er darf, wir dürfen.','Sollen: ich soll; mögen: ich mag. Ich möchte … is a useful polite way to express what you would like.'],examples:[['Ich kann gut schwimmen.','I can swim well.'],['Wir wollen am Samstag Tennis spielen.','We want to play tennis on Saturday.'],['Heute muss ich zu Hause bleiben.','Today I have to stay at home.']],tip:'When you use a modal, listen for the two verb positions: kann … schwimmen.'},
+ words:vocabulary('sich fit halten=to keep fit|schwimmen=to swim|radeln=to cycle|segeln=to sail|surfen=to surf|Ski laufen=to ski|Fußball spielen=to play football|Tennis spielen=to play tennis|das Federballspiel=badminton / shuttlecock game|die Leichtathletik=athletics|die Mannschaft=team|der Schläger=racket / bat|die Medaille=medal|trainieren=to train|können=can / to be able to|müssen=must / to have to|wollen=to want to|dürfen=may / to be allowed to|sollen=should / to be supposed to|mögen=to like'),
+ speaking:'Describe a sport you enjoy, what you can do well and what you would like to practise. Ask a partner about their interests.',writing:'Write 80–90 words about keeping fit: your current routine, something you have done and what you want to do next. Include modal verbs.',
+ exercises:[['fill','Ich ___ gut schwimmen. (can)',['kann'],'Können becomes kann with ich.'],['translate','Translate: the team',['die Mannschaft'],'Mannschaft is feminine.'],['order','Build: We want to play tennis.',['Wir','wollen','Tennis','spielen'],'The infinitive spielen goes at the end after wollen.'],['choice','Which sentence has the correct verb order?',['Ich muss heute trainieren.','Ich muss trainiere heute.','Ich trainieren muss heute.','Ich heute muss trainieren.'],'The modal is conjugated; the infinitive is last.'],['fill','Du ___ hier spielen. (may)',['darfst'],'Dürfen becomes darfst with du.'],['translate','Translate: to cycle',['radeln','Rad fahren','Fahrrad fahren'],'Radeln and Rad fahren both describe cycling.'],['order','Build: Today I have to stay at home.',['Heute','muss','ich','zu','Hause','bleiben'],'Muss stays second even when Heute begins the sentence.'],['choice','Which form completes Er ___ Fußball spielen? (wants to)',['will','wollt','wollen','willst'],'Wollen becomes will with er.']]},
+ {id:'1.4d',title:'Gesund leben',subtitle:'Lifestyle & separable verbs',page:40,description:'Discuss daily habits, food, sport and relaxation using separable verbs.',
+ lesson:{title:'Bring your routine together.',intro:'Describe how food, activity and relaxation fit into your day. Separable verbs are useful for actions such as preparing meals, going out, joining in and resting.',rule:'In a present-tense main clause, a separable verb splits: fernsehen → Ich sehe am Abend fern. The conjugated verb is second and its prefix goes to the end.',points:['Examples: aufmachen → macht … auf; zubereiten → bereitet … zu; ausprobieren → probiert … aus.','With a modal, keep the infinitive together at the end: Ich will mitmachen.','Sich ausruhen also needs a reflexive pronoun: Ich ruhe mich aus. Wir ruhen uns aus.'],examples:[['Wir bereiten das Abendessen zu.','We prepare dinner.'],['Nach der Schule ruhe ich mich aus.','After school I rest.'],['Ich möchte eine neue Sportart ausprobieren.','I would like to try a new sport.']],tip:'When learning a separable verb, mark its prefix and practise both its main-clause and modal-verb patterns.'},
+ words:vocabulary('gesund leben=to live healthily|die Bewegung=movement / exercise|die Entspannung=relaxation|sportlich=sporty|ungesund=unhealthy|die Gewohnheit=habit|aufgeben=to give up|ausgeben=to spend|ausgehen=to go out|aufmachen=to open|fernsehen=to watch television|zubereiten=to prepare|ausprobieren=to try out|zurückkommen=to come back|sich ausruhen=to rest|mitmachen=to take part|mitspielen=to join in a game|weiterspielen=to continue playing|die Freizeit=free time|die Sportart=type of sport'),
+ speaking:'Describe your daily habits, including meals, activity and relaxation. Use four separable verbs and one modal verb.',writing:'Write a blog entry about your routine. Include eating, sport and relaxation, explain your preferences and describe a habit you would like to change.',
+ exercises:[['fill','Am Abend sehe ich ___. (fernsehen)',['fern'],'The separable prefix fern goes to the end.'],['translate','Translate: to take part',['mitmachen'],'Mitmachen is a separable verb.'],['order','Build: We prepare dinner.',['Wir','bereiten','das','Abendessen','zu'],'Zubereiten splits into bereiten … zu.'],['choice','Which sentence is correct?',['Ich will mitmachen.','Ich will mache mit.','Ich mit will machen.','Ich mache will mit.'],'With a modal, the separable infinitive stays together at the end.'],['fill','Nach der Schule ruhe ich ___ aus.',['mich'],'Sich ausruhen needs mich with ich.'],['translate','Translate: to try out',['ausprobieren'],'Ausprobieren splits into probiere … aus in a main clause.'],['order','Build: He comes back at six o’clock.',['Er','kommt','um','sechs','Uhr','zurück'],'Zurückkommen splits; zurück is last.'],['choice','Which verb splits as gibt … auf?',['aufgeben','ausgeben','aufmachen','ausgehen'],'Aufgeben becomes gibt … auf with er/sie/es.']]},
+].map(withFullVocabulary);
+const cards=units.flatMap(u=>u.deck);
+const exercises=units.flatMap(u=>u.exercises.map(([type,prompt,answers,explanation],i)=>({id:`ex-${u.id}-${i}`,unit:u.id,type,prompt,answers,explanation})));
+
+const STORAGE_KEY='lernraum.v1';
+const localDay=(date=new Date())=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+function shiftDay(day,amount){const [y,m,d]=day.split('-').map(Number);return localDay(new Date(y,m-1,d+amount,12));}
+function initialState(){return {version:1,profile:{name:'',goal:50,theme:'light'},xp:0,daily:{},rewards:{},reviews:{},lessons:[],sessions:[],plans:[],customCards:[],quizBest:{},focusMinutes:0,badges:[],drafts:{}};}
+function normalize(value){return String(value).normalize('NFC').toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').replace(/[.,!?;:…]/g,'').replace(/\s+/g,' ').trim();}
+function answerMatches(value,answers){return answers.some(a=>normalize(a)===normalize(value));}
+function levelInfo(xp){const level=Math.floor(Math.max(0,xp)/250)+1;return {level,current:xp%250,needed:250,percent:Math.round((xp%250)/250*100)};}
+function streak(state,today=localDay()){let day=state.daily[today]?.actions?today:shiftDay(today,-1);let count=0;while(state.daily[day]?.actions){count++;day=shiftDay(day,-1);}return count;}
+function bestStreak(state){let best=0,current=0,previous=null;for(const day of Object.keys(state.daily).filter(d=>state.daily[d].actions>0).sort()){current=previous&&shiftDay(previous,1)===day?current+1:1;best=Math.max(best,current);previous=day;}return best;}
+function award(state,key,amount,day=localDay()){if(state.rewards[key])return 0;state.rewards[key]=true;state.xp+=amount;state.daily[day]??={xp:0,actions:0};state.daily[day].xp+=amount;state.daily[day].actions++;return amount;}
+function reviewCard(state,id,grade,day=localDay()){if(!['again','hard','good'].includes(grade))throw Error('Invalid grade');const prev=state.reviews[id]||{interval:0,repetitions:0};const interval=grade==='again'?0:grade==='hard'?1:Math.min(60,Math.max(2,prev.interval*2||2));state.reviews[id]={interval,repetitions:prev.repetitions+1,due:shiftDay(day,interval),last:day,difficult:grade!=='good',mastered:grade==='good'&&prev.repetitions>=1};return award(state,`card:${id}:${day}`,grade==='good'?10:5,day);}
+function completeLesson(state,id,day=localDay()){if(!state.lessons.includes(id))state.lessons.push(id);return award(state,`lesson:${id}`,20,day);}
+function completeQuiz(state,unit,correct,total,day=localDay()){if(!Number.isInteger(total)||total<1||correct<0||correct>total)throw Error('Invalid quiz result');const score=Math.round(correct/total*100);state.quizBest[unit]=Math.max(state.quizBest[unit]||0,score);state.daily[day]??={xp:0,actions:0};state.daily[day].actions++;return score;}
+function unitProgress(state,unit,allCards){const deck=allCards.filter(c=>c.unit===unit);const learned=deck.filter(c=>state.reviews[c.id]?.mastered).length;return Math.round((state.lessons.includes(unit)?20:0)+(deck.length?learned/deck.length*50:0)+(state.quizBest[unit]||0)*.3);}
+function shuffle(items,random=Math.random){const arr=[...items];for(let i=arr.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+const isObject=x=>x&&typeof x==='object'&&!Array.isArray(x);
+const safeKey=k=>!['__proto__','constructor','prototype'].includes(k);
+const int=(v,min,max)=>Number.isInteger(v)&&v>=min&&v<=max;
+function validateState(raw){
+ if(!isObject(raw)||raw.version!==1)throw Error('This is not a compatible Lernraum backup.');
+ const s=initialState();
+ if(!isObject(raw.profile)||typeof raw.profile.name!=='string'||raw.profile.name.length>50||![25,50,100,150].includes(raw.profile.goal)||!['light','dark'].includes(raw.profile.theme))throw Error('Invalid profile.');
+ s.profile={name:raw.profile.name,goal:raw.profile.goal,theme:raw.profile.theme};
+ if(!int(raw.xp,0,10000000))throw Error('Invalid XP.');s.xp=raw.xp;
+ for(const key of ['daily','rewards','reviews','quizBest'])if(!isObject(raw[key])||Object.keys(raw[key]).length>100000)throw Error('Invalid progress data.');
+ const dayPattern=/^\d{4}-\d{2}-\d{2}$/;
+ for(const [k,v]of Object.entries(raw.daily)){if(!dayPattern.test(k)||!isObject(v)||!int(v.xp,0,100000)||!int(v.actions,0,100000))throw Error('Invalid daily activity.');s.daily[k]={xp:v.xp,actions:v.actions};}
+ for(const [k,v]of Object.entries(raw.rewards)){if(safeKey(k)&&k.length<200&&v===true)s.rewards[k]=true;}
+ for(const [k,v]of Object.entries(raw.reviews)){if(!safeKey(k)||!isObject(v)||!int(v.interval,0,60)||!int(v.repetitions,0,100000)||!dayPattern.test(v.due)||!dayPattern.test(v.last))throw Error('Invalid card progress.');s.reviews[k]={interval:v.interval,repetitions:v.repetitions,due:v.due,last:v.last,difficult:!!v.difficult,mastered:!!v.mastered};}
+ for(const [k,v]of Object.entries(raw.quizBest)){if(!safeKey(k)||!int(v,0,100))throw Error('Invalid score.');s.quizBest[k]=v;}
+ for(const key of ['lessons','plans','sessions','customCards'])if(!Array.isArray(raw[key])||raw[key].length>10000)throw Error('Invalid saved items.');
+ s.lessons=[...new Set(raw.lessons.filter(x=>typeof x==='string'&&x.length<100))];
+ s.plans=raw.plans.map(p=>{if(!isObject(p)||typeof p.id!=='string'||p.id.length>100||typeof p.title!=='string'||p.title.length>120||!dayPattern.test(p.date)||!int(p.minutes,5,180)||typeof p.unit!=='string'||p.unit.length>100)throw Error('Invalid planner session.');return {id:p.id,title:p.title,date:p.date,minutes:p.minutes,unit:p.unit,done:!!p.done};});
+ s.customCards=raw.customCards.map(c=>{if(!isObject(c)||!['id','unit','front','back'].every(k=>typeof c[k]==='string'&&c[k].length>0&&c[k].length<=300))throw Error('Invalid custom card.');return {id:c.id,unit:c.unit,front:c.front,back:c.back};});
+ s.sessions=raw.sessions.map(x=>{if(!isObject(x)||!['review','quiz','lesson','focus','writing'].includes(x.type)||typeof x.title!=='string'||x.title.length>150||!Number.isFinite(Date.parse(x.date))||!int(x.xp,0,100000))throw Error('Invalid activity history.');const v={type:x.type,title:x.title,date:x.date,xp:x.xp};if(int(x.score,0,100))v.score=x.score;return v;});
+ s.focusMinutes=int(raw.focusMinutes,0,1000000)?raw.focusMinutes:0;
+ s.badges=Array.isArray(raw.badges)?raw.badges.filter(x=>typeof x==='string'&&x.length<50).slice(0,250):[];
+ if(raw.drafts!==undefined){if(!isObject(raw.drafts)||Object.keys(raw.drafts).length>1000)throw Error('Invalid writing drafts.');for(const [key,value] of Object.entries(raw.drafts)){if(!safeKey(key)||key.length>100||typeof value!=='string'||value.length>10000)throw Error('Invalid writing draft.');s.drafts[key]=value;}}
+ return s;
+}
+function loadState(storage){try{const raw=storage.getItem(STORAGE_KEY);return {state:raw?validateState(JSON.parse(raw)):initialState(),error:false};}catch{return {state:initialState(),error:true};}}
+function saveState(storage,state){try{storage.setItem(STORAGE_KEY,JSON.stringify(state));return true;}catch{return false;}}
+const ranks=[
+ [1,'Seedling'],[3,'Growing learner'],[6,'Word explorer'],[10,'Phrase finder'],
+ [15,'Story weaver'],[20,'Conversation guide'],[30,'Wordsmith'],[40,'Language scholar'],
+ [50,'Archivist'],[65,'Master storyteller'],[80,'Language mentor'],[100,'Lernraum legend']
+];
+function achievements(state,today=localDay(),courseIds=[]){const reviews=Object.keys(state.reviews).length,mastered=Object.values(state.reviews).filter(r=>r.mastered).length;const milestones=[];
+ function collection(group,icon,value,thresholds,names,describe){
+  thresholds.forEach((target,i)=>milestones.push({group,icon,title:names[i],description:describe(target),value,target,unlocked:value>=target}));
+ }
+ collection('Vocabulary','cards',reviews,[1,10,50,100,200,400,600],['First flip','Pocket deck','Card scout','Century deck','Word atlas','Dictionary diver','Great card tour'],n=>'Review '+n+' different cards');
+ collection('Vocabulary','book',mastered,[1,5,50,100,200,400],['It stuck','Firm roots','Memory grove','Hundred strong','Living lexicon','Memory forest'],n=>'Master '+n+' cards');
+ collection('Notebook','pen',courseIds.filter(id=>state.rewards['writing:'+id]).length,[1,3,5,8,12,15],['First page','Paper trail','Ink keeper','Notebook regular','Ink marathon','Full portfolio'],n=>'Finish '+n+' different notebook tasks');
+ collection('Course','book',courseIds.filter(id=>state.lessons.includes(id)).length,[1,3,5,8,12],['Open book','Page turner','Chapter walker','Past halfway','Home stretch'],n=>'Complete '+n+' course sections');
+ collection('Course','target',courseIds.filter(id=>state.quizBest[id]>=80).length,[1,3,5,10,15],['On target','Practice trio','Steady aim','Sharp eye','Across the course'],n=>'Score at least 80% in '+n+' different sections');
+ collection('Habits','clock',state.focusMinutes,[5,50,100,250,500,1000],['Quiet start','Focus corner','Deep reader','Quiet hours','Focus studio','Thousand minutes'],n=>'Log '+n+' focus minutes');
+ collection('Habits','flame',bestStreak(state),[2,7,14,30,60,100],['Back again','Full week','Fortnight','Monthly rhythm','Long run','Hundred-day habit'],n=>'Study for '+n+' consecutive days');
+ collection('Habits','calendar',Object.values(state.daily).filter(d=>d.actions>0).length,[5,15,30,60,100,200],['Five visits','Familiar face','Study calendar','Seasoned learner','Century club','Yearbook'],n=>'Study on '+n+' different days');
+ for(const [target,title] of ranks.slice(3))collection('Ranks','star',levelInfo(state.xp).level,[target],[title],n=>'Reach level '+n);
+ return [
+ {title:'First steps',description:'Complete your first learning activity',icon:'sprout',unlocked:state.xp>0},
+ {title:'Card collector',description:'Review 20 different flashcards',icon:'cards',unlocked:reviews>=20},
+ {title:'On a roll',description:'Study on 3 consecutive days',icon:'flame',unlocked:bestStreak(state)>=3},
+ {title:'Perfect practice',description:'Score 100% in a practice session',icon:'target',unlocked:state.sessions.some(s=>s.type==='quiz'&&s.score===100)},
+ {title:'Word keeper',description:'Master 20 flashcards',icon:'book',unlocked:mastered>=20},
+ {title:'Finding focus',description:'Complete 25 minutes of focus time',icon:'clock',unlocked:state.focusMinutes>=25},
+ {title:'Rising star',description:'Reach level 5',icon:'star',unlocked:state.xp>=1000},
+ {title:'Chapter explorer',description:'Complete all 15 textbook sections',icon:'compass',unlocked:courseIds.length>0&&courseIds.every(id=>state.lessons.includes(id))} ,...milestones].map(b=>({group:'Foundations',...b,unlocked:b.unlocked||!!state.badges?.includes(b.title)}));}
+
+const baseCards = cards;
+
+const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
+const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const e=escapeHTML;
+const paths={
+ book:'M3 4h6a4 4 0 0 1 3 2 4 4 0 0 1 3-2h6v16h-6a4 4 0 0 0-3 1 4 4 0 0 0-3-1H3z M12 6v15',
+ grid:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',
+ cards:'m7 3 13 2-2 16-13-2z M4 6 2 18l3 1 M9 10l6 1 M9 14l4 1',
+ pen:'m15 4 5 5 M4 16 16 4a3 3 0 0 1 4 4L8 20l-5 1z',
+ calendar:'M5 5h14a2 2 0 0 1 2 2v13H3V7a2 2 0 0 1 2-2 M7 3v4 M17 3v4 M3 10h18 M7 14h2 M15 14h2 M7 17h2',
+ chart:'M4 3v18h17 M8 16v-5 M13 16V7 M18 16V4',
+ settings:'m9 3-1 3-3 1-2 3 2 2-1 3 3 3 3-1 2 2 3-1 1-3 3-1 1-3-2-2 1-3-3-3-3 1z M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0',
+ search:'M16 10a6 6 0 1 1-12 0 6 6 0 0 1 12 0 M15 15l6 6',
+ flame:'M13 2c1 5-4 6-2 9 1 1 3 0 3-3 6 5 5 12-1 14-6 1-11-5-7-11 0 4 2 5 3 3-3-6 4-7 4-12z',
+ bolt:'m13 2-9 12h7l-1 8 10-12h-7z',
+ target:'M21 12a9 9 0 1 1-9-9 M17 12a5 5 0 1 1-5-5 M12 12l9-9 M17 3h4v4',
+ clock:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 M12 7v5l3 2',
+ check:'m5 12 4 4L19 6',close:'m6 6 12 12 M6 18 18 6',plus:'M12 5v14 M5 12h14',
+ chevron:'m9 5 7 7-7 7',left:'m15 5-7 7 7 7',
+ star:'m12 2 3 6 7 1-5 5 1 8-6-4-6 4 1-8-5-5 7-1z',
+ sprout:'M12 22V12 M12 15C3 16 2 10 3 6c7-1 10 2 9 9 M12 12c0-8 4-10 9-9 1 6-3 10-9 9',
+ sun:'M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M12 2v2 M12 20v2 M2 12h2 M20 12h2 M5 5l2 2 M17 17l2 2 M5 19l2-2 M17 7l2-2',
+ people:'M10 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0 M17 10a3 3 0 1 0-3-3 M2 21v-3a5 5 0 0 1 10 0v3 M16 14a5 5 0 0 1 5 5v2',
+ wave:'M7 13 4 8a2 2 0 0 1 3-2l4 6-4-8a2 2 0 0 1 3-1l4 8-2-7a2 2 0 0 1 3 0l3 9V9a2 2 0 0 1 4 0v6c0 8-10 10-14 4l-5-5a2 2 0 0 1 3-3z',
+ home:'m2 11 10-8 10 8 M5 9v12h14V9 M9 21v-8h6v8',
+ trophy:'M7 3h10v6a5 5 0 0 1-10 0z M7 5H3v3a4 4 0 0 0 5 4 M17 5h4v3a4 4 0 0 1-5 4 M12 14v6 M8 21h8',
+ sound:'M3 9h4l5-4v14l-5-4H3z M16 8a6 6 0 0 1 0 8 M19 5a10 10 0 0 1 0 14',
+ flip:'M4 7h13l-3-3 M20 17H7l3 3 M20 7v5 M4 17v-5',
+ flag:'M5 22V3 M5 3c6-4 9 4 15 0v10c-6 4-9-4-15 0',
+ play:'m8 4 13 8-13 8z',pause:'M8 4v16 M16 4v16',
+ reset:'M3 11a9 9 0 1 1 1 6 M3 4v7h7',
+ trash:'M3 6h18 M9 6V3h6v3 M5 6l1 15h12l1-15 M10 10v7 M14 10v7',
+ download:'M12 3v12 M7 10l5 5 5-5 M4 16v5h16v-5',
+ upload:'M12 16V4 M7 9l5-5 5 5 M4 16v5h16v-5',
+ info:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 M12 11v6 M12 7h.01',
+ menu:'M4 6h16 M4 12h16 M4 18h16',
+ compass:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 m-5-13-3 6-6 3 3-6z',
+ lock:'M6 10h12v11H6z M8 10V6a4 4 0 0 1 8 0v4',
+ keyboard:'M2 5h20v14H2z M5 9h1 M9 9h1 M13 9h1 M17 9h1 M5 13h1 M9 15h8',
+ heart:'M12 21 3 12C-3 4 8 0 12 7c4-7 15-3 9 5z'
+};
+const icon=(name,cls='')=>`<svg class="icon ${cls}" aria-hidden="true" viewBox="0 0 24 24"><path d="${paths[name]||paths.book}"/></svg>`;
+const routes={dashboard:'Overview',subjects:'My subjects',flashcards:'Flashcards',practice:'Practice',notebook:'Writing notebook',planner:'Study planner',progress:'My progress',settings:'Settings'};
+let loaded;try{loaded=loadState(localStorage);}catch{loaded={state:initialState(),error:true};}
+let state=loaded.state,storageError=loaded.error,route=validRoute(),menuOpen=false;
+let session=null,quiz=null,reviewUnit='all',reviewMode='due',reviewSize='10',practiceUnit='all',practiceMode='mixed',librarySearch='',libraryChapter='all';
+let selectedDate=localDay(),weekOffset=0,lastFocus=null,timer={seconds:25*60,duration:25,deadline:null,running:false};
+const allCards=()=>[...baseCards,...state.customCards];
+const unitById=id=>units.find(u=>u.id===id);
+const todayXP=()=>state.daily[localDay()]?.xp||0;
+const mastered=()=>allCards().filter(c=>state.reviews[c.id]?.mastered).length;
+const completedSections=()=>units.filter(u=>state.lessons.includes(u.id)).length;
+const courseAchievements=()=>achievements(state,localDay(),units.map(u=>u.id));
+const dueCards=()=>allCards().filter(c=>!state.reviews[c.id]||state.reviews[c.id].due<=localDay());
+const fmtDate=(day,options={month:'short',day:'numeric'})=>new Date(day+'T12:00:00').toLocaleDateString('en-GB',options);
+const unitOptions=(selected='all',all=true)=>`${all?`<option value="all" ${selected==='all'?'selected':''}>All sections</option>`:''}${chapters.map(ch=>`<optgroup label="${ch.id} · ${e(ch.title)}">${units.filter(u=>u.chapter===ch.id).map(u=>`<option value="${u.id}" ${u.id===selected?'selected':''}>${u.id} · ${e(u.title)}</option>`).join('')}</optgroup>`).join('')}`;
+function validRoute(){return Object.hasOwn(routes,location.hash.slice(1))?location.hash.slice(1):'dashboard';}
+function save(){state.badges=courseAchievements().filter(b=>b.unlocked).map(b=>b.title);try{storageError=!saveState(localStorage,state);}catch{storageError=true;}if(storageError)toast('Progress could not be saved. Export a backup in Settings.','error');}
+function toast(message,type=''){const node=document.createElement('div');node.className='toast '+type;node.textContent=message;$('#toasts').append(node);setTimeout(()=>node.remove(),4500);}
+function addSession(type,title,xp,extra={}){state.sessions.unshift({type,title,xp,date:new Date().toISOString(),...extra});state.sessions=state.sessions.slice(0,500);}
+function rewardNotice(amount,previousXP){if(amount)toast(`+${amount} XP · Nice work!`);if(levelInfo(state.xp).level>levelInfo(previousXP).level)setTimeout(()=>toast(`Level ${levelInfo(state.xp).level} unlocked. Keep growing!`),500);}
+function navigate(next){if(route===next){render();return;}location.hash=next;}
+window.addEventListener('hashchange',()=>{route=validRoute();menuOpen=false;render();window.scrollTo(0,0);});
+const navItem=(id,name,ico)=>`<a href="#${id}" class="${route===id?'active':''}" ${route===id?'aria-current="page"':''}>${icon(ico)}<span>${name}</span>${id==='flashcards'&&dueCards().length?`<span class="count">${dueCards().length}</span>`:''}</a>`;
+function sourceNotice(){return `<div class="source-notice">${icon('info')}<span>Textbook course · 1.1a–1.4d · ${units.length} sections</span><button data-action="source-info">Details</button></div>`;}
+function render(){
+ document.documentElement.dataset.theme=state.profile.theme;
+ document.title=`${routes[route]} · Lernraum`;
+ const lv=levelInfo(state.xp),name=state.profile.name||'Your space';
+ $('#app').innerHTML=`<div class="app-shell"><button class="menu-scrim ${menuOpen?'show':''}" data-action="menu" aria-label="Close navigation"></button><aside class="sidebar ${menuOpen?'open':''}" aria-label="Main navigation"><a class="brand" href="#dashboard"><span class="brand-mark">${icon('book')}</span>lernraum<span class="brand-dot">.</span></a><div class="workspace-label"><span class="flag" aria-label="German"></span> German study space</div><div class="nav-label">YOUR WORKSPACE</div><nav class="nav">${navItem('dashboard','Overview','grid')}${navItem('subjects','My subjects','book')}${navItem('flashcards','Flashcards','cards')}${navItem('practice','Practice','pen')}${navItem('notebook','Writing notebook','book')}${navItem('planner','Study planner','calendar')}${navItem('progress','My progress','chart')}</nav><div class="sidebar-bottom"><nav class="nav">${navItem('settings','Settings','settings')}</nav><div class="level-card"><div class="level-top">${icon('sprout')} Level ${lv.level} · ${ranks.filter(([n])=>lv.level>=n).at(-1)[1]}</div><div class="progress"><span style="width:${lv.percent}%"></span></div><div class="small muted" style="font-size:.72rem">${lv.current} / ${lv.needed} XP to level ${lv.level+1}</div></div><div class="profile"><span class="avatar">${e((state.profile.name||'L').slice(0,1).toUpperCase())}</span><div><strong>${e(name)}</strong><div class="muted" style="font-size:.7rem">A little better, every day</div></div><button data-action="settings" aria-label="Open settings">${icon('settings')}</button></div></div></aside><div class="main-wrap"><header class="topbar"><button class="icon-btn mobile-menu" data-action="menu" aria-label="Toggle navigation" aria-expanded="${menuOpen}">${icon('menu')}</button><div class="breadcrumb"><span>My workspace /</span><strong>${routes[route]}</strong></div><div class="top-actions"><button class="search-launch" data-action="search" aria-label="Search your study space">${icon('search')}<span>Search your space</span><kbd>Ctrl K</kbd></button><div class="streak-pill" title="Consecutive days with learning activity">${icon('flame')} ${streak(state)}<span>day streak</span></div><button class="icon-btn" data-action="focus-modal" aria-label="Open focus timer">${icon('clock')}</button><span class="avatar" aria-hidden="true">${e((state.profile.name||'L').slice(0,1).toUpperCase())}</span></div></header><main id="main" class="main-content" tabindex="-1">${storageError?'<div class="storage-error">Browser storage is unavailable or a saved file could not be read. Use Settings to export a backup; new progress may not survive a refresh.</div>':''}${({dashboard:dashboard,subjects:subjects,flashcards:flashcards,practice:practice,notebook,planner:planner,progress:progress,settings:settings}[route])()}<div class="footer-note">Made for small steps and big breakthroughs. <span aria-hidden="true">✦</span> Your progress stays in this browser.</div></main></div></div>`;
+ bindPage();updateTimerDisplay();
+}
+function stat(value,label,ico,color,suffix=''){return `<div class="stat"><div class="stat-icon ${color}">${icon(ico)}</div><div><div class="stat-value">${value}${suffix?` <span>${suffix}</span>`:''}</div><div class="stat-label">${label}</div></div></div>`;}
+function unitCard(u,large=false){const pct=unitProgress(state,u.id,allCards());return `<button class="unit-card" data-action="lesson" data-id="${u.id}"><div class="unit-card-top"><span class="unit-icon ${u.color}">${icon(u.icon)}</span><span class="unit-tag">${u.id}</span></div><h3>${e(u.title)}</h3><p>${e(u.subtitle)}</p>${large?`<p class="unit-description">${e(u.description)}</p>`:''}<div class="unit-meta">${icon('cards')} ${allCards().filter(c=>c.unit===u.id).length} cards <span>·</span> Book pp. ${u.pages.join('–')}</div><div class="progress" role="progressbar" aria-label="${e(u.title)} progress" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div><div class="progress-label"><span>${pct===0?'Ready when you are':pct===100?'Complete':'Keep going'}</span><span>${pct}%</span></div></button>`;}
+function heroArt(){return `<svg class="hero-art" viewBox="0 0 270 245" aria-hidden="true"><circle cx="172" cy="125" r="91" fill="#225c4a"/><circle cx="172" cy="125" r="112" stroke="#5d8961" stroke-opacity=".28" fill="none"/><path d="M210 41v12m-6-6h12 M55 70v9m-4-4h8 M225 169v10m-5-5h10" stroke="#aec697" stroke-width="1.6"/><g transform="translate(56 89) rotate(-14 85 60)"><rect x="12" y="34" width="145" height="93" rx="8" fill="#123e33"/><rect x="10" y="27" width="145" height="90" rx="7" fill="#d0d8a5"/><path d="M18 35h128v72H18z" fill="#f0eacb"/><path d="M77 39v69" stroke="#a9b487" stroke-width="2"/><path d="M13 30c27-7 49-2 65 6 25-10 47-11 71-4v69c-25-6-49-5-71 4-21-9-43-12-65-6z" fill="#e8e9cb"/><path d="M78 37v68" stroke="#a5b582" stroke-width="2"/><path d="m25 47 36 5m-36 8 36 5m-36 9 26 3 M92 50l40-6m-40 18 40-6m-40 18 28-4" stroke="#a4b58d" stroke-width="3" stroke-linecap="round"/></g><g transform="translate(155 60) rotate(12)"><rect width="70" height="83" rx="10" fill="#cbe1ad"/><rect x="8" y="8" width="54" height="67" rx="6" fill="#dcedc5"/><text x="35" y="46" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="#41633b">Aa</text><path d="M23 58h24" stroke="#8ca876" stroke-width="2"/></g><path d="M219 219c-16-17-13-43-3-53 14 15 13 35 3 53 M219 219c-1-19 14-33 28-33-1 17-11 30-28 33" fill="#84a676"/><path d="M219 224v-37" stroke="#c0d5a6"/><circle cx="74" cy="199" r="5" fill="#95b07f"/></svg>`;}
+function dashboard(){
+ const next=units.find(u=>!state.lessons.includes(u.id))||units[0],today=localDay(),plans=state.plans.filter(p=>p.date===today),greet=state.profile.name?`Welcome back, ${e(state.profile.name)}.`:'A good day to grow.';
+ return `<div class="greeting"><div><h1>${greet} <span style="font-size:1.55rem">🌱</span></h1><p>A little focus today. A little more confidence tomorrow.</p></div><div class="date-label">${fmtDate(today,{weekday:'long',day:'numeric',month:'long'})}</div></div>${sourceNotice()}<div class="stat-grid">${stat(state.xp.toLocaleString(),'Total XP earned','bolt','sage')}${stat(streak(state),'Current streak','flame','peach','days')}${stat(mastered(),'Words mastered','cards','lavender')}${stat(completedSections(),'Sections completed','book','sky',`/ ${units.length}`)}</div><div class="dashboard-columns"><div><section class="hero"><div class="hero-copy"><div class="eyebrow">${icon('sprout')} YOUR NEXT SMALL STEP</div><h2>Make room for<br>a little German.</h2><p>${completedSections()?'Keep your momentum going.':'Your learning journey starts here.'} Explore ${e(next.subtitle.toLowerCase())} at your own pace.</p><button class="btn" data-action="lesson" data-id="${next.id}">${icon('play')} ${completedSections()?'Continue learning':'Start learning'}</button></div>${heroArt()}</section><div class="section-head"><h2>Your learning path</h2><a class="text-btn" href="#subjects">View all units</a></div><div class="unit-grid">${units.slice(0,3).map(u=>unitCard(u)).join('')}</div><div class="section-head"><h2>A little practice, a lot of progress</h2></div><div class="tool-grid"><a href="#flashcards" class="tool-card">${icon('cards')}<div><strong>Flashcards</strong><small>${dueCards().length} cards ready to review</small></div></a><a href="#practice" class="tool-card">${icon('pen')}<div><strong>Quick practice</strong><small>Put your skills to work</small></div></a><button class="tool-card" data-action="focus-modal">${icon('clock')}<div><strong>Focus time</strong><small>Find your study rhythm</small></div></button></div></div><aside class="side-column"><section class="panel"><div class="panel-heading"><h2>Your daily goal</h2>${icon('target')}</div><div class="goal-ring-wrap"><div class="goal-ring" style="--percent:${Math.min(100,todayXP()/state.profile.goal*100)}"><div class="goal-ring-inner"><strong>${todayXP()}</strong><small>/ ${state.profile.goal} XP</small></div></div><div class="goal-copy"><strong>${todayXP()>=state.profile.goal?'You did it!':'Small steps count.'}</strong><p>${todayXP()>=state.profile.goal?'Daily goal complete.':'A few minutes is a great start.'}</p></div></div><div class="days">${weekDays().map(day=>`<div class="day ${day===today?'today':''} ${state.daily[day]?.actions?'done':''}"><span>${fmtDate(day,{weekday:'short'}).slice(0,1)}</span><div class="day-circle" title="${day}">${state.daily[day]?.actions?icon('check'):fmtDate(day,{day:'numeric'})}</div></div>`).join('')}</div></section><section class="panel"><div class="panel-heading"><h2>Today’s plan</h2><button class="text-btn" data-action="add-plan" aria-label="Add study session">${icon('plus')}</button></div><div class="plan-preview">${plans.length?plans.slice(0,3).map(p=>miniPlan(p)).join(''):'<p class="empty-small">A fresh page for today.<br>Give your next study session a place.</p>'}</div><a href="#planner" class="text-btn" style="margin-top:16px">${plans.length?'Open study planner':'Plan a little time'}</a></section><section class="quote-card"><div class="eyebrow">A LITTLE GERMAN, EVERY DAY</div><div class="phrase-line"><h3>Schritt für Schritt.</h3><button data-action="speak" data-text="Schritt für Schritt." aria-label="Listen to the German phrase">${icon('sound')}</button></div><p>Step by step.</p></section></aside></div>`;
+}
+function miniPlan(p){return `<div class="mini-plan"><button class="check-btn ${p.done?'checked':''}" data-action="toggle-plan" data-id="${e(p.id)}" aria-label="${p.done?'Mark incomplete':'Complete'}: ${e(p.title)}" aria-pressed="${p.done}">${p.done?icon('check'):''}</button><div class="${p.done?'completed-text':''}"><strong>${e(p.title)}</strong><p>${p.minutes} min · ${e(unitById(p.unit)?.subtitle||'General study')}</p></div></div>`;}
+function pageIntro(title,description,action=''){return `<div class="page-intro"><div><h1>${title}</h1><p>${description}</p></div>${action}</div>`;}
+function subjects(){return `${pageIntro('Your learning, in one place.','Every section from 1.1a to 1.4d, in textbook order.')}${sourceNotice()}<div class="subject-heading"><span class="flag" aria-label="German"></span><div><h2>German · I introduce myself</h2><p>${units.length} sections · ${baseCards.length} vocabulary cards · ${exercises.length} exercises</p></div><span class="pill">Book pages 12–41</span></div><div class="toolbar course-toolbar"><div class="field"><label for="unit-search">Find a section</label><input id="unit-search" type="search" placeholder="Try 1.2c, school or Gesundheit…" value="${e(librarySearch)}"></div><div class="field"><label for="chapter-filter">Topic</label><select id="chapter-filter"><option value="all">All topics</option>${chapters.map(ch=>`<option value="${ch.id}" ${libraryChapter===ch.id?'selected':''}>${ch.id} · ${e(ch.title)}</option>`).join('')}</select></div></div><div id="library-grid">${filteredUnits()}</div><p class="hint">The book’s food unit ends at 1.3c; there is no 1.3d. All four health sections, through 1.4d, are included.</p>`;}
+function filteredUnits(){const matching=units.filter(u=>(libraryChapter==='all'||u.chapter===libraryChapter)&&normalize(u.id+' '+u.title+' '+u.subtitle+' '+u.description).includes(normalize(librarySearch)));return chapters.map(ch=>{const members=matching.filter(u=>u.chapter===ch.id);return members.length?`<section class="course-chapter" aria-labelledby="chapter-${ch.id.replace('.','-')}"><div class="section-head"><div><span class="eyebrow">UNIT ${ch.id}</span><h2 id="chapter-${ch.id.replace('.','-')}">${e(ch.title)}</h2></div><span class="small muted">${members.length} ${members.length===1?'section':'sections'} · Book pp. ${ch.pages.join('–')}</span></div><div class="library-grid">${members.map(u=>unitCard(u,true)).join('')}</div></section>`:'';}).join('')||'<p class="muted">No sections match your search.</p>';}
+function reviewSummary(){const deck=allCards().filter(c=>reviewUnit==='all'||c.unit===reviewUnit),u=unitById(reviewUnit);return `${deck.length} cards in ${u?u.id:'all sections'} · Vocabulary from book ${u?'p. '+u.vocabularyPage:'pp. 42–45'}.`; }
+function flashcards(){if(session)return renderReview();return `${pageIntro('Make every word stick.','Flip, recall, repeat. A little practice makes it familiar.',`<button class="btn secondary" data-action="add-card">${icon('plus')} Add a card</button>`)}${sourceNotice()}<div class="center-stage"><div class="panel study-setup"><div><div class="setup-icon sage">${icon('cards')}</div><h2>Your next word is waiting.</h2><p>Read the German, recall the meaning, then turn the card. Your confidence decides when it comes back.</p><div class="setup-stats"><div><strong>${dueCards().length}</strong><small>ready to review</small></div><div><strong>${mastered()}</strong><small>words mastered</small></div><div><strong>${allCards().length}</strong><small>in your collection</small></div></div><div class="setup-fields"><div class="field"><label for="review-unit">Choose your unit</label><select id="review-unit">${unitOptions(reviewUnit)}</select></div><div class="field"><label for="review-mode">What would you like to review?</label><select id="review-mode"><option value="due" ${reviewMode==='due'?'selected':''}>Due & new cards</option><option value="all" ${reviewMode==='all'?'selected':''}>All cards</option><option value="difficult" ${reviewMode==='difficult'?'selected':''}>Difficult cards</option></select></div><div class="field"><label for="review-size">Cards per session</label><select id="review-size"><option value="10" ${reviewSize==='10'?'selected':''}>10 cards</option><option value="20" ${reviewSize==='20'?'selected':''}>20 cards</option><option value="all" ${reviewSize==='all'?'selected':''}>Entire deck</option></select></div><button class="btn full" data-action="start-review">${icon('play')} Start review</button><p id="review-summary" class="small muted" style="margin:0">${e(reviewSummary())}</p></div></div><p class="hint">${icon('info')} “Got it” schedules a review in 2 days, then doubles the interval up to 60 days. “Still learning” returns tomorrow. “Again” stays due today. Mastery starts after two reviews with the latest marked “Got it.”</p>${state.customCards.length?`<div class="panel"><h2>Your own cards</h2>${state.customCards.map(c=>`<div class="activity"><div><strong>${e(c.front)}</strong><small>${e(c.back)}</small></div><span><button class="icon-btn" data-action="delete-card" data-id="${e(c.id)}" aria-label="Delete ${e(c.front)}">${icon('trash')}</button></span></div>`).join('')}</div>`:''}</div>`;}
+function renderReview(){if(session.finished)return resultHTML('Review complete.','Every time you recall a word, you make it a little more yours.',session.xp,`${session.items.length} cards`,`${session.known} confident`,'review-again');const c=session.items[session.index],u=unitById(c.unit);return `${pageIntro('A little word practice.','Take your time. Remembering takes repetition.')}<div class="center-stage"><div class="session-top"><strong>${e(u?u.id+' · '+u.title:'Your cards')} · ${session.index+1} of ${session.items.length}</strong><button class="text-btn" data-action="exit-review">End session</button></div><div class="progress"><span style="width:${session.index/session.items.length*100}%"></span></div><button class="flashcard ${session.flipped?'flipped':''}" data-action="flip" aria-label="${session.flipped?'Show German':'Reveal meaning'}"><span class="eyebrow">${session.flipped?'ENGLISH MEANING':'GERMAN · RECALL THE MEANING'}</span><span class="word" lang="${session.flipped?'en':'de'}">${e(session.flipped?c.back:c.front)}</span>${session.flipped?`<span class="translation" lang="de">${e(c.front)}</span>`:''}<span class="flip-hint">${icon('flip')} ${session.flipped?'Click to see German':'Click to reveal'}</span></button><div class="card-actions"><button class="icon-btn" data-action="speak" data-text="${e(c.front)}" aria-label="Listen to German">${icon('sound')}</button><button class="btn secondary sm" data-action="flag-card" aria-pressed="${!!state.reviews[c.id]?.difficult}">${icon('flag')} ${state.reviews[c.id]?.difficult?'Marked difficult':'Mark difficult'}</button></div><div class="review-grades ${session.flipped?'':'invisible'}" ${session.flipped?'':'inert'}><button class="grade again" data-action="grade" data-grade="again">Again<small>Keep practising · 1</small></button><button class="grade hard" data-action="grade" data-grade="hard">Still learning<small>Review tomorrow · 2</small></button><button class="grade good" data-action="grade" data-grade="good">Got it<small>Review later · 3</small></button></div><p class="session-hint">Space to flip · 1, 2 or 3 to rate after revealing · XP is awarded once per card each day.</p></div>`;}
+function resultHTML(title,description,xp,one,two,action){return `<div class="center-stage"><div class="panel result"><div class="setup-icon sage">${icon('trophy')}</div><span class="eyebrow muted">ANOTHER SMALL STEP FORWARD</span><h2 style="margin-top:12px">${title}</h2><p>${description}</p><div class="result-stats"><div><strong>+${xp}</strong><span>XP earned</span></div><div><strong>${e(one.split(' ')[0])}</strong><span>${e(one.split(' ').slice(1).join(' '))}</span></div><div><strong>${e(two.split(' ')[0])}</strong><span>${e(two.split(' ').slice(1).join(' '))}</span></div></div><div class="card-actions"><button class="btn" data-action="${action}">Keep practising</button><a href="#dashboard" class="btn secondary">Back to overview</a></div>${quiz?.finished&&quiz.mistakes.length?'<button class="text-btn" data-action="retry-mistakes">Practise missed questions</button>':''}</div></div>`;}
+function startReview(){let items=allCards().filter(c=>(reviewUnit==='all'||c.unit===reviewUnit)&&(reviewMode==='all'||(reviewMode==='difficult'?state.reviews[c.id]?.difficult:!state.reviews[c.id]||state.reviews[c.id].due<=localDay())));if(!items.length){toast(reviewMode==='difficult'?'No difficult cards yet. Mark a card during a review.':'You’re all caught up! Choose All cards to keep practising.');return;}session={items:shuffle(items).slice(0,reviewSize==='all'?items.length:Number(reviewSize)),index:0,flipped:false,xp:0,known:0,finished:false};render();}
+function gradeCard(grade){if(!session||session.finished||!session.flipped)return;const c=session.items[session.index],before=state.xp,earned=reviewCard(state,c.id,grade);session.xp+=earned;if(grade==='good')session.known++;session.index++;session.flipped=false;if(session.index>=session.items.length){session.finished=true;addSession('review',`${session.items.length} flashcards reviewed`,session.xp);}save();rewardNotice(earned,before);render();}
+function practice(){if(quiz)return renderQuiz();return `${pageIntro('Turn knowledge into confidence.','A safe space to try, make mistakes, and try again.')}${sourceNotice()}<div class="center-stage"><div class="panel study-setup"><div><div class="setup-icon lavender">${icon('pen')}</div><h2>Put your German to work.</h2><p>Mix quick questions with translations, missing words and sentence building. Get an explanation after every answer.</p><span class="pill">Up to 8 questions · about 5 minutes</span></div><div class="setup-fields"><div class="field"><label for="practice-unit">Choose your unit</label><select id="practice-unit">${unitOptions(practiceUnit)}</select></div><div class="field"><label for="practice-mode">Exercise type</label><select id="practice-mode">${[['mixed','A little of everything'],['choice','Multiple choice'],['fill','Fill in the blank'],['translate','Translation'],['order','Sentence builder']].map(([v,t])=>`<option value="${v}" ${practiceMode===v?'selected':''}>${t}</option>`).join('')}</select></div><button class="btn full" data-action="start-quiz">${icon('play')} Start practice</button></div></div><div class="quiz-modes">${[['target','Quick choices','Find the right meaning'],['pen','Fill the gap','Make the phrase fit'],['book','Translation','Recall it yourself'],['cards','Build a sentence','Put words in their place']].map(([i,t,d])=>`<div class="mode-card">${icon(i)}<strong>${t}</strong><p>${d}</p></div>`).join('')}</div><p class="hint">Correct answers earn 15 XP once per question each day. Mixed practice also draws vocabulary questions from your selected unit. Mistakes are useful: review them at the end.</p></div>`;}
+const typeLabels={choice:'Multiple choice',fill:'Fill in the blank',translate:'Translation',order:'Sentence builder'};
+function buildQuestions(){let pool=exercises.filter(q=>practiceUnit==='all'||q.unit===practiceUnit);const vocab=allCards().filter(c=>practiceUnit==='all'||c.unit===practiceUnit).map(c=>({id:'vocab-'+c.id,unit:c.unit,type:'choice',prompt:`What does “${c.front}” mean?`,answers:[c.back,...shuffle([...new Set(allCards().map(x=>x.back))].filter(x=>x!==c.back)).slice(0,3)],explanation:`${c.front} means ${c.back}.`}));if(practiceMode==='mixed'){const authored=shuffle(pool).slice(0,6);pool=[...authored,...shuffle(vocab).slice(0,Math.max(2,8-authored.length))];}else if(practiceMode==='choice')pool=[...pool.filter(q=>q.type==='choice'),...vocab];else pool=pool.filter(q=>q.type===practiceMode);return shuffle(pool).slice(0,8);}
+function startQuiz(items=null){const list=items||buildQuestions();if(!list.length){toast('No questions are available for this selection.');return;}quiz={items:list,index:0,correct:0,xp:0,answer:'',checked:false,finished:false,mistakes:[],selectedWords:[],unit:practiceUnit};prepareQuestion();render();}
+function prepareQuestion(){quiz.answer='';quiz.checked=false;quiz.selectedWords=[];const q=quiz.items[quiz.index];quiz.options=q.type==='choice'?shuffle(q.answers):[];quiz.bank=q.type==='order'?shuffle(q.answers.map((word,i)=>({word,id:i}))):[];}
+function renderQuiz(){if(quiz.finished)return resultHTML('Look how far you’ve come.',quiz.correct===quiz.items.length?'A perfect practice session. Your hard work is taking root.':'Keep the useful mistakes. They show you what to practise next.',quiz.xp,`${Math.round(quiz.correct/quiz.items.length*100)}% accuracy`,`${quiz.correct}/${quiz.items.length} correct`,'quiz-again');const q=quiz.items[quiz.index],expected=q.type==='order'?q.answers.join(' '):q.answers[0];let input='';if(q.type==='choice')input=`<div class="options">${quiz.options.map((v,i)=>`<button class="option ${quiz.answer===v?'selected':''} ${quiz.checked&&v===q.answers[0]?'correct':''} ${quiz.checked&&quiz.answer===v&&!quiz.isCorrect?'incorrect':''}" data-action="choose" data-index="${i}" ${quiz.checked?'disabled':''}><span>${String.fromCharCode(65+i)}</span>${e(v)}</button>`).join('')}</div>`;else if(q.type==='order')input=`<div class="word-answer" aria-label="Your sentence">${quiz.selectedWords.length?quiz.selectedWords.map((id,i)=>`<button class="word-chip" data-action="remove-word" data-index="${i}" ${quiz.checked?'disabled':''}>${e(q.answers[id])}</button>`).join(''):'<span class="muted small">Tap the words below to build your sentence.</span>'}</div><div class="word-bank" aria-label="Available words">${quiz.bank.map(w=>`<button class="word-chip ${quiz.selectedWords.includes(w.id)?'used':''}" data-action="add-word" data-index="${w.id}" ${quiz.checked||quiz.selectedWords.includes(w.id)?'disabled':''}>${e(w.word)}</button>`).join('')}</div>`;else input=`<label class="sr-only" for="quiz-answer">Your answer</label><input id="quiz-answer" class="answer-input" autocomplete="off" spellcheck="false" lang="de" placeholder="Type your answer in German…" value="${e(quiz.answer)}" ${quiz.checked?'disabled':''}><div class="umlaut-row" aria-label="German characters">${['ä','ö','ü','ß','Ä','Ö','Ü'].map(x=>`<button data-action="insert-char" data-char="${x}" ${quiz.checked?'disabled':''}>${x}</button>`).join('')}</div>`;return `${pageIntro('A little practice goes a long way.','One question at a time. You’ve got this.')}<div class="center-stage"><div class="session-top"><strong>${e(q.unit)} · Question ${quiz.index+1} of ${quiz.items.length}</strong><button class="text-btn" data-action="exit-quiz">End practice</button></div><div class="progress"><span style="width:${quiz.index/quiz.items.length*100}%"></span></div><section class="panel question-card"><span class="pill">${typeLabels[q.type]}</span><h2>${e(q.prompt)}</h2>${input}${quiz.checked?`<div class="feedback ${quiz.isCorrect?'correct':'incorrect'}" role="status"><strong>${icon(quiz.isCorrect?'check':'info')} ${quiz.isCorrect?'That’s right!':'A good one to remember.'}</strong>${!quiz.isCorrect?`<p>Answer: <b lang="de">${e(expected)}</b></p>`:''}<p>${e(q.explanation)}</p></div>`:''}<div class="question-footer"><small>${quiz.checked?(quiz.isCorrect?'Another connection made.':'Mistakes are part of learning.'):'Take your time. There’s no rush.'}</small><button class="btn" data-action="${quiz.checked?'next-question':'check-answer'}" ${!quiz.checked&&!quiz.answer.trim()?'disabled':''}>${quiz.checked?(quiz.index===quiz.items.length-1?'See results':'Next question'):'Check answer'}</button></div></section></div>`;}
+function checkAnswer(){if(!quiz||quiz.checked||!quiz.answer.trim())return;const q=quiz.items[quiz.index];quiz.isCorrect=q.type==='choice'?quiz.answer===q.answers[0]:q.type==='order'?answerMatches(quiz.answer,[q.answers.join(' ')]):answerMatches(quiz.answer,q.answers);quiz.checked=true;const before=state.xp;if(quiz.isCorrect){quiz.correct++;const earned=award(state,`question:${q.id}:${localDay()}`,15);quiz.xp+=earned;rewardNotice(earned,before);}else quiz.mistakes.push(q);save();render();}
+function nextQuestion(){if(!quiz?.checked)return;quiz.index++;if(quiz.index>=quiz.items.length){quiz.finished=true;const score=completeQuiz(state,quiz.unit,quiz.correct,quiz.items.length);for(const u of new Set(quiz.items.map(q=>q.unit))){const qs=quiz.items.filter(q=>q.unit===u),missed=quiz.mistakes.filter(q=>q.unit===u).length;completeQuiz(state,u,qs.length-missed,qs.length);}addSession('quiz',`${quiz.items.length} practice questions`,quiz.xp,{score});save();}else prepareQuestion();render();}
+function weekDays(offset=0){const today=localDay(),dow=new Date(today+'T12:00:00').getDay();const monday=shiftDay(today,-((dow+6)%7)+offset*7);return Array.from({length:7},(_,i)=>shiftDay(monday,i));}
+function timerHTML(){return `<div class="timer"><div class="panel-heading"><h2>A moment to focus</h2>${icon('clock')}</div><div class="timer-display" data-timer-display>25:00</div><p data-timer-status>One thing at a time.</p><div class="timer-controls"><button class="btn" data-action="timer-toggle" data-timer-toggle>${icon('play')} Start focus</button><button class="icon-btn" data-action="timer-reset" aria-label="Reset timer">${icon('reset')}</button></div><div class="timer-presets">${[5,15,25,45].map(m=>`<button data-action="timer-preset" data-minutes="${m}" class="${timer.duration===m?'active':''}">${m} min</button>`).join('')}</div><p class="small" style="margin-top:19px;font-size:.73rem">Keep this tab open. Completed focus time earns XP once per day.</p></div>`;}
+function planner(){const days=weekDays(weekOffset),plans=state.plans.filter(p=>p.date===selectedDate);return `${pageIntro('Make a little room for learning.','A realistic plan beats a perfect one. Start small.',`<button class="btn" data-action="add-plan">${icon('plus')} Plan a session</button>`)}<div class="planner-layout"><section><div class="week-nav"><strong>${fmtDate(days[0])} – ${fmtDate(days[6],{day:'numeric',month:'short',year:'numeric'})}</strong><button class="icon-btn" data-action="prev-week" aria-label="Previous week">${icon('left')}</button><button class="btn secondary sm" data-action="today">Today</button><button class="icon-btn" data-action="next-week" aria-label="Next week">${icon('chevron')}</button></div><div class="week-grid">${days.map(day=>`<button class="calendar-day ${day===selectedDate?'selected':''} ${day===localDay()?'today':''}" data-action="select-date" data-date="${day}" aria-pressed="${day===selectedDate}" aria-label="${fmtDate(day,{weekday:'long',day:'numeric',month:'long'})}"><span>${fmtDate(day,{weekday:'short'})}</span><strong>${fmtDate(day,{day:'numeric'})}</strong>${state.plans.some(p=>p.date===day)?'<em></em>':'<em style="visibility:hidden"></em>'}</button>`).join('')}</div><div class="section-head"><h2>${selectedDate===localDay()?'Today':fmtDate(selectedDate,{weekday:'long',day:'numeric',month:'long'})}</h2><span class="muted small">${plans.filter(p=>p.done).length}/${plans.length} complete</span></div>${plans.length?plans.map(p=>`<div class="plan-row"><button class="check-btn ${p.done?'checked':''}" data-action="toggle-plan" data-id="${e(p.id)}" aria-label="${p.done?'Mark incomplete':'Complete'}: ${e(p.title)}" aria-pressed="${p.done}">${p.done?icon('check'):''}</button><div class="plan-info ${p.done?'completed-text':''}"><strong>${e(p.title)}</strong><p>${p.minutes} min · ${e(unitById(p.unit)?.title||'General study')}</p></div><div class="row-actions"><button class="icon-btn" data-action="edit-plan" data-id="${e(p.id)}" aria-label="Edit session">${icon('pen')}</button><button class="icon-btn" data-action="delete-plan" data-id="${e(p.id)}" aria-label="Delete session">${icon('trash')}</button></div></div>`).join(''):`<div class="empty-state">${icon('calendar')}<h3>A little space in your day.</h3><p>No sessions planned. Add one small, achievable goal.</p><button class="btn secondary" data-action="add-plan">${icon('plus')} Add a session</button></div>`}<p class="hint">Your planner is a personal checklist. Earn XP and build your streak by studying, reviewing cards or completing a focus timer.</p></section><aside class="side-column"><section class="panel">${timerHTML()}</section></aside></div>`;}
+const notebookGuides={
+ '1.1a':['50–70 words','Pin your town on a map, then picture the view from your front door.','Ich wohne in … | In der Nähe gibt es …'],
+ '1.1b':['50–70 words','Sketch the room. Label two objects and choose an adjective for each.','Mein Lieblingszimmer ist … | Besonders gemütlich finde ich …'],
+ '1.1c':['80–90 words','Plan three parts: your home, a favourite corner, and one chore you would gladly swap.','Am liebsten … | Was ich gar nicht gern mache, ist …'],
+ '1.1d':['70–90 words','Draw your dream room. Decide what belongs where and what you would do there.','An der Wand … | Dort würde ich …'],
+ '1.2a':['5 connected sentences','Trace one day of your timetable from your first lesson to your favourite one.','In der ersten Stunde … | Um halb zehn …'],
+ '1.2b':['80–90 words','Design a timetable you would love. Leave room for a break and explain one choice.','Mein idealer Schultag beginnt … | In der Pause …'],
+ '1.2c':['60–80 words','Choose three stops on a tour for a new pupil. Say what makes each worth visiting.','Unsere Schule liegt … | Besonders gut gefällt mir …'],
+ '1.2d':['130–140 words','Address your partner, describe your day, compare two routines and finish with a preference.','Liebe … / Lieber … | Im Vergleich dazu …'],
+ '1.3a':['3 meal entries','Divide the page into breakfast, lunch and dinner. List what you had and what was missing.','Zum Frühstück … | Ich esse keine …'],
+ '1.3b':['80–90 words','Pick a familiar dish, recall a meal you tried, and choose something new for next time.','Letztes Mal habe ich … probiert. | Ich würde gern …'],
+ '1.3c':['3 poster captions','Design three meal ideas. Give each a reason and a different superlative.','Am liebsten … | Am besten schmeckt mir …'],
+ '1.4a':['2 short descriptions','Imagine two cancelled plans. Give each a different symptom and affected body part.','Mein Kopf tut weh. | Deshalb kann ich …'],
+ '1.4b':['80–90 words','Tell a friend when the illness began, how you feel today and which plan must change.','Seit gestern … | Leider kann ich zurzeit …'],
+ '1.4c':['80–90 words','Draw a timeline labelled usually, last week and next week. Add a different activity at each point.','Normalerweise … | Nächste Woche möchte ich …'],
+ '1.4d':['90–110 words','List one food habit, one way you move and one way you relax. Pick one change to explain.','Um mich zu entspannen, … | In Zukunft möchte ich …']
+};
+function notebook(){
+ return pageIntro('Writing notebook','Choose a task, open your notebook and write in German.')+chapters.map(ch=>{
+  const tasks=units.filter(u=>u.chapter===ch.id);
+  return `<section class="panel notebook-section"><div class="panel-heading"><h2>${ch.title}</h2><span class="pill">${tasks.filter(u=>state.rewards['writing:'+u.id]).length} / ${tasks.length} finished</span></div>${tasks.map(u=>`<button class="notebook-row" data-action="writing-guide" data-id="${u.id}"><span class="unit-icon ${ch.color}">${icon(state.rewards['writing:'+u.id]?'check':'pen')}</span><span><strong lang="de">${e(u.title)}</strong><small>${u.id} · ${notebookGuides[u.id][0]}${state.rewards['writing:'+u.id]?' · Finished':''}</small></span></button>`).join('')}</section>`;
+ }).join('');
+}
+function openWriting(id){
+ const u=unitById(id);if(!u)return;
+ const [target,plan,starters]=notebookGuides[id],done=state.rewards['writing:'+id];
+ modal(e(u.title),`<span class="pill">${u.id} · ${target}</span><h3>Your task</h3><p>${e(u.writing)}</p><h3>Plan on paper</h3><p>${plan}</p><details><summary>German sentence starters</summary><ul>${starters.split(' | ').map(s=>`<li lang="de">${s}</li>`).join('')}</ul></details><h3>Read your work back</h3><p>Check that you covered each part, met the length target and put the verbs in the right place.</p><div class="modal-actions"><button class="btn" data-action="${done?'close-modal':'finish-writing'}" data-id="${id}">${done?'Finished · Close':'I finished this in my notebook · 30 XP'}</button></div>`);
+}
+function rankPanel(){
+ const lv=levelInfo(state.xp).level,next=ranks.find(([n])=>n>lv);
+ return `<section class="panel rank-panel"><span class="unit-icon butter">${icon('star')}</span><div><h2>Level ${lv} · ${ranks.filter(([n])=>lv>=n).at(-1)[1]}</h2><p>${next?`${((next[0]-1)*250-state.xp).toLocaleString()} XP to ${next[1]} at level ${next[0]}.`:'Highest named rank earned. Every 250 XP adds another level.'}</p><details><summary>Explore the ranks</summary><ul>${ranks.map(([n,name])=>`<li>Level ${n} · ${name}${lv>=n?' ✓':''}</li>`).join('')}</ul></details></div></section>`;
+}
+
+function progress(){const days=Array.from({length:7},(_,i)=>shiftDay(localDay(),i-6)),max=Math.max(50,...days.map(d=>state.daily[d]?.xp||0)),badges=courseAchievements();return `${pageIntro('Look at you, growing.','Every small step leaves a little progress behind.')}<div class="stat-grid">${stat(state.xp.toLocaleString(),'Lifetime XP','bolt','sage')}${stat(levelInfo(state.xp).level,'Your level','sprout','butter')}${stat(state.sessions.filter(s=>s.type==='quiz').length,'Practice sessions','pen','lavender')}${stat(state.focusMinutes,'Focused minutes','clock','sky')}</div><div class="progress-layout"><section class="panel"><div class="panel-heading"><h2>Your week in XP</h2><span class="pill">${days.reduce((a,d)=>a+(state.daily[d]?.xp||0),0)} XP</span></div><p class="small">Progress comes from showing up.</p><div class="chart" role="img" aria-label="XP earned in the last seven days">${days.map(day=>{const xp=state.daily[day]?.xp||0;return `<div class="chart-col" title="${day}: ${xp} XP"><span class="chart-value">${xp}</span><div class="chart-bar-wrap"><div class="chart-bar" style="height:${xp/max*100}%"></div></div><small>${fmtDate(day,{weekday:'short'})}</small></div>`;}).join('')}</div></section><section class="panel"><div class="panel-heading"><h2>A habit taking root</h2><span class="pill">${streak(state)} day streak</span></div><p class="small">Your last 28 days of learning.</p><div class="heatmap">${Array.from({length:28},(_,i)=>{const day=shiftDay(localDay(),i-27),xp=state.daily[day]?.xp||0;return `<div class="heatcell ${xp>=state.profile.goal?'high':xp>0?'low':''}" title="${day}: ${xp} XP" aria-label="${day}: ${xp} XP"></div>`;}).join('')}</div><div class="heatmap-caption"><span>${fmtDate(shiftDay(localDay(),-27))}</span><span>Today</span></div></section></div>${rankPanel()}<div class="section-head"><h2>Little milestones, well earned.</h2><span class="muted small">${badges.filter(b=>b.unlocked).length} of ${badges.length} unlocked</span></div>${[...new Set(badges.map(b=>b.group))].map(group=>{const groupBadges=badges.filter(b=>b.group===group);return `<details class="panel badge-group" ${group==='Foundations'?'open':''}><summary>${group} · ${groupBadges.filter(b=>b.unlocked).length}/${groupBadges.length}</summary><div class="achievement-grid">${groupBadges.map(b=>`<div class="achievement ${b.unlocked?'unlocked':''}"><div class="medal">${icon(b.icon)}</div><h3>${b.title}</h3><p>${b.description}</p><span class="pill" style="${b.unlocked?'':'background:var(--bg);color:var(--muted)'}">${icon(b.unlocked?'check':'lock')} ${b.unlocked?'Unlocked':b.target?`${Math.min(b.value,b.target)} / ${b.target}`:'In progress'}</span></div>`).join('')}</div></details>`;}).join('')}<div class="progress-layout"><section class="panel"><div class="panel-heading"><h2>Unit progress</h2></div><div class="mastery-list">${units.map(u=>{const pct=unitProgress(state,u.id,allCards());return `<div class="mastery-row"><div class="unit-icon ${u.color}">${icon(u.icon)}</div><div><strong>${u.id} · ${e(u.title)}</strong><div class="progress"><span style="width:${pct}%"></span></div></div><span>${pct}%</span></div>`;}).join('')}</div><p class="hint" style="padding-bottom:0">20% lesson completion · 50% word mastery · 30% best practice score.</p></section><section class="panel"><div class="panel-heading"><h2>Recently in your space</h2></div>${state.sessions.length?state.sessions.slice(0,7).map(s=>`<div class="activity">${icon({review:'cards',quiz:'pen',lesson:'book',focus:'clock',writing:'pen'}[s.type])}<div><strong>${e(s.title)}</strong><small>${new Date(s.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}${s.score!==undefined?` · ${s.score}% accuracy`:''}</small></div><span>+${s.xp} XP</span></div>`).join(''):'<div class="empty-small">Your story starts with one small step.<br>Complete a lesson or try a few cards.</div>'}</section></div>`;}
+function settings(){return `${pageIntro('Make this space yours.','A few small preferences. A comfortable place to learn.')}<div class="settings-layout"><section class="panel"><h2>Your preferences</h2><p>Set a goal that fits your day.</p><form id="settings-form" class="form-stack"><div class="field"><label for="profile-name">What should we call you?</label><input id="profile-name" name="name" maxlength="50" placeholder="Your first name" value="${e(state.profile.name)}"></div><div class="field"><label for="daily-goal">Daily XP goal</label><select id="daily-goal" name="goal">${[25,50,100,150].map(n=>`<option value="${n}" ${state.profile.goal===n?'selected':''}>${n} XP · ${n===25?'a gentle start':n===50?'a steady rhythm':n===100?'a little challenge':'a focused day'}</option>`).join('')}</select></div><div class="field"><label for="theme">Appearance</label><select id="theme" name="theme"><option value="light" ${state.profile.theme==='light'?'selected':''}>Light & fresh</option><option value="dark" ${state.profile.theme==='dark'?'selected':''}>Quiet evening</option></select></div><button class="btn" type="submit">Save preferences</button></form></section><section class="panel"><h2>Your progress belongs to you.</h2><p>Keep a backup, or bring your saved progress to another browser.</p><div class="settings-actions"><button class="btn secondary" data-action="export">${icon('download')} Export backup</button><button class="btn secondary" data-action="import">${icon('upload')} Restore backup</button><input type="file" id="import-file" accept="application/json,.json" hidden></div><div class="settings-note">Everything is saved locally in this browser. There’s no account or cloud sync. Clearing browser data removes progress, so export a backup occasionally. A restore replaces your current progress.</div><div style="border-top:1px solid var(--border);padding-top:23px;margin-top:27px"><h3>Start fresh</h3><p class="small" style="margin:8px 0 15px">Reset this browser’s progress, planner and personal cards.</p><button class="btn danger sm" data-action="reset-data">Reset all data</button></div></section><section class="panel"><h2>About your study material</h2><p>${e(source.title)}</p><div class="source-detail"><b>Lessons through 1.4d · Full vocabulary from book pages 42–45.</b><br>${e(source.note)}<br><br>Each section has vocabulary, grammar notes, speaking and writing prompts, and four kinds of interactive practice. Page references use the printed book numbering; PDF page numbers are shown inside lessons.</div></section><section class="panel"><h2>Little shortcuts</h2><div class="activity"><div><strong>Search your space</strong><small>Ctrl / ⌘ + K</small></div></div><div class="activity"><div><strong>Flip a flashcard</strong><small>Space</small></div></div><div class="activity"><div><strong>Rate a revealed card</strong><small>1 · Again, 2 · Still learning, 3 · Got it</small></div></div><div class="activity"><div><strong>Check a typed answer</strong><small>Enter</small></div></div><p class="hint">Pronunciation uses your browser’s German voice when available. AE / OE / UE and SS are accepted as alternatives to German special characters in typed answers.</p></section></div>`;}
+
+function modal(title,body,onMount){lastFocus=document.activeElement;$('#modal-root').innerHTML=`<dialog aria-labelledby="modal-title"><div class="modal-head"><h2 id="modal-title">${title}</h2><button class="icon-btn" data-action="close-modal" aria-label="Close dialog">${icon('close')}</button></div><div class="modal-body">${body}</div></dialog>`;const d=$('dialog');d.addEventListener('close',()=>{lastFocus?.focus?.();});d.addEventListener('click',ev=>{if(ev.target===d){const r=d.getBoundingClientRect();if(ev.clientX<r.left||ev.clientX>r.right||ev.clientY<r.top||ev.clientY>r.bottom)d.close();}});d.showModal();onMount?.();}
+function closeModal(){$('dialog')?.close();}
+function openLesson(id){const u=unitById(id);if(!u)return;modal(e(u.id+' · '+u.title),`<div class="lesson-body"><div class="lesson-title"><div class="unit-icon ${u.color}">${icon(u.icon)}</div><div><strong>${e(u.subtitle)}</strong><p class="small">Book pp. ${u.pages.join('–')} · PDF pp. ${u.pdfPages.join('–')} · about ${u.minutes} min</p></div></div><h3>${e(u.lesson.title)}</h3><p>${e(u.lesson.intro)}</p><div class="lesson-rule">${e(u.lesson.rule)}</div><ul class="lesson-points">${u.lesson.points.map(point=>`<li>${e(point)}</li>`).join('')}</ul>${u.lesson.examples.map(([de,en])=>`<div class="example"><div><strong lang="de">${e(de)}</strong><p>${e(en)}</p></div><button class="icon-btn" data-action="speak" data-text="${e(de)}" aria-label="Listen to ${e(de)}">${icon('sound')}</button></div>`).join('')}<div class="lesson-tip">${e(u.lesson.tip)}</div><h3>Your words to keep</h3><p class="small">${u.words.length} cards · Full vocabulary list from book p. ${u.vocabularyPage}, plus your original revision words.</p><table class="vocab-table"><thead><tr><th>German</th><th>English</th></tr></thead><tbody>${u.words.map(([de,en])=>`<tr><td lang="de">${e(de)}</td><td>${e(en)}</td></tr>`).join('')}</tbody></table><section class="productive-task"><h3>Say it aloud</h3><p>${e(u.speaking)}</p><h3>Writing practice</h3><button class="btn secondary" data-action="writing-guide" data-id="${u.id}">Open notebook guide</button><p>${e(u.writing)}</p><div class="field"><label for="writing-draft">Your writing draft</label><textarea id="writing-draft" lang="de" rows="6" maxlength="10000" placeholder="Write your response in German…">${e(state.drafts[u.id]||'')}</textarea><small id="draft-status" role="status">Saved in this browser as you type. Use the examples to check your work; free writing is not automatically graded.</small></div></section><div class="modal-actions"><button class="btn secondary" data-action="lesson-cards" data-id="${u.id}">Review cards</button><button class="btn secondary" data-action="lesson-practice" data-id="${u.id}">Practise this section</button><button class="btn" data-action="complete-lesson" data-id="${u.id}">${icon('check')} ${state.lessons.includes(u.id)?'Completed':'Complete lesson · 20 XP'}</button></div></div>`,()=>$('#writing-draft').addEventListener('input',ev=>{state.drafts[u.id]=ev.target.value;save();$('#draft-status').textContent=storageError?'Could not save. Copy your writing before closing.':'Draft saved in this browser · '+ev.target.value.trim().split(/\s+/).filter(Boolean).length+' words';}));}
+function planDialog(id=null){const p=state.plans.find(p=>p.id===id);modal(p?'Edit your session':'Make time for learning',`<form id="plan-form" class="form-stack"><div class="field"><label for="plan-title">What would you like to study?</label><input id="plan-title" name="title" required maxlength="120" placeholder="e.g. Review family vocabulary" value="${e(p?.title||'')}"></div><div class="field"><label for="plan-unit">Unit</label><select id="plan-unit" name="unit"><option value="general">General study</option>${unitOptions(p?.unit||'general',false)}</select></div><div class="split-fields"><div class="field"><label for="plan-date">Date</label><input id="plan-date" name="date" type="date" required value="${p?.date||selectedDate}"></div><div class="field"><label for="plan-minutes">Minutes</label><input id="plan-minutes" name="minutes" type="number" min="5" max="180" step="5" required value="${p?.minutes||15}"></div></div><div class="modal-actions"><button type="button" class="btn secondary" data-action="close-modal">Cancel</button><button class="btn" type="submit">Save session</button></div></form>`,()=>$('#plan-form').addEventListener('submit',ev=>{ev.preventDefault();const form=new FormData(ev.target),title=String(form.get('title')).trim();if(!title){$('#plan-title').setCustomValidity('Give your session a short title.');$('#plan-title').reportValidity();return;}const data={id:p?.id||crypto.randomUUID(),title,unit:form.get('unit'),date:form.get('date'),minutes:Number(form.get('minutes')),done:p?.done||false};if(p)state.plans[state.plans.indexOf(p)]=data;else state.plans.push(data);selectedDate=data.date;const monday=weekDays()[0];weekOffset=Math.floor((new Date(selectedDate+'T12:00:00')-new Date(monday+'T12:00:00'))/86400000/7);save();closeModal();render();toast('A little time, set aside.');}));$('#plan-title').addEventListener('input',ev=>ev.target.setCustomValidity(''));}
+function addCardDialog(){modal('A new word for your collection',`<form id="card-form" class="form-stack"><div class="field"><label for="card-front">German word or phrase</label><input id="card-front" name="front" maxlength="300" required lang="de" placeholder="e.g. der Apfel"></div><div class="field"><label for="card-back">English meaning</label><input id="card-back" name="back" maxlength="300" required placeholder="e.g. apple"></div><div class="field"><label for="card-unit">Add to unit</label><select id="card-unit" name="unit">${unitOptions(units[0].id,false)}</select></div><div class="modal-actions"><button class="btn" type="submit">Add card</button></div></form>`,()=>$('#card-form').addEventListener('submit',ev=>{ev.preventDefault();const f=new FormData(ev.target);if(!String(f.get('front')).trim()||!String(f.get('back')).trim()){toast('Please add both a word and its meaning.','error');return;}state.customCards.push({id:'custom-'+crypto.randomUUID(),front:String(f.get('front')).trim(),back:String(f.get('back')).trim(),unit:f.get('unit')});save();closeModal();render();toast('New word added to your collection.');}));}
+function openSearch(){modal('Find a little inspiration',`<div class="field"><label for="global-search" class="sr-only">Search lessons and vocabulary</label><input id="global-search" type="search" placeholder="Search lessons, German words or meanings…" autofocus></div><div id="search-results" class="search-results"><p class="small muted">Try “1.2c”, “Schule” or “food”.</p></div>`,()=>$('#global-search').addEventListener('input',ev=>{const q=normalize(ev.target.value);if(!q){$('#search-results').innerHTML='<p class="small muted">Search across lessons and vocabulary.</p>';return;}const us=units.filter(u=>normalize(u.id+' '+u.title+' '+u.subtitle).includes(q)).slice(0,4),cs=allCards().filter(c=>normalize(c.front+' '+c.back).includes(q)).slice(0,8);$('#search-results').innerHTML=us.map(u=>`<button class="search-result" data-action="lesson" data-id="${u.id}">${icon('book')}<div><strong>${u.id} · ${e(u.title)}</strong><small>${e(u.subtitle)} · Lesson</small></div></button>`).join('')+cs.map(c=>`<button class="search-result" data-action="search-card" data-id="${e(c.id)}">${icon('cards')}<div><strong>${e(c.front)}</strong><small>${e(c.back)}</small></div></button>`).join('')||'<p class="muted small">No matches. Try a shorter word or its English meaning.</p>';}));}
+function speak(text){if(!('speechSynthesis'in window)){toast('This browser does not support pronunciation.','error');return;}const voices=speechSynthesis.getVoices(),voice=voices.find(v=>v.lang.toLowerCase().startsWith('de'));if(!voice){toast('No German voice is available in this browser.','error');return;}speechSynthesis.cancel();const utter=new SpeechSynthesisUtterance(text);utter.lang='de-DE';utter.voice=voice;utter.rate=.85;utter.onerror=()=>toast('Pronunciation is unavailable right now.','error');speechSynthesis.speak(utter);}
+function updateTimerDisplay(){const seconds=timer.running?Math.max(0,Math.ceil((timer.deadline-Date.now())/1000)):timer.seconds;$$('[data-timer-display]').forEach(el=>el.textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`);$$('[data-timer-status]').forEach(el=>el.textContent=timer.running?'You’re making room to learn.':'One thing at a time.');$$('[data-timer-toggle]').forEach(el=>el.innerHTML=icon(timer.running?'pause':'play')+(timer.running?' Pause':' Start focus'));$$('[data-action="timer-preset"]').forEach(el=>el.classList.toggle('active',Number(el.dataset.minutes)===timer.duration));}
+setInterval(()=>{if(timer.running&&Date.now()>=timer.deadline){timer.running=false;timer.seconds=0;state.focusMinutes+=timer.duration;const earned=award(state,'focus:'+localDay(),Math.min(50,timer.duration*2));addSession('focus',`${timer.duration} minutes of focus`,earned);save();toast(`Focus complete. Take a breath. +${earned} XP`);render();}updateTimerDisplay();},500);
+function exportBackup(){const url=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=`lernraum-backup-${localDay()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Your backup is ready.');}
+async function importBackup(file){if(!file)return;if(file.size>5*1024*1024){toast('That file is too large. Choose a Lernraum JSON backup under 5 MB.','error');return;}try{const restored=validateState(JSON.parse(await file.text()));modal('Restore your study space?',`<p>This backup contains <b>${restored.xp} XP</b>, <b>${restored.plans.length} planned sessions</b> and <b>${restored.customCards.length} personal cards</b>. It will replace your current progress in this browser.</p><div class="modal-actions"><button class="btn secondary" data-action="close-modal">Cancel</button><button class="btn" id="confirm-restore">Restore backup</button></div>`,()=>$('#confirm-restore').addEventListener('click',()=>{state=restored;session=null;quiz=null;save();closeModal();render();toast('Your study space has been restored.');}));}catch(err){toast(err.message||'Could not read that backup.','error');}}
+function confirmReset(){modal('A fresh start?',`<p>This removes all saved progress, planned sessions, preferences and personal cards from this browser. Export a backup first if you want to keep a copy.</p><div class="modal-actions"><button class="btn secondary" data-action="close-modal">Keep my progress</button><button class="btn danger" id="confirm-reset">Reset everything</button></div>`,()=>$('#confirm-reset').addEventListener('click',()=>{state=initialState();session=null;quiz=null;timer={seconds:1500,duration:25,deadline:null,running:false};save();closeModal();render();toast('A fresh page. Your space is ready.');}));}
+function endSession(kind){const current=kind==='review'?session:quiz;if(!current)return;const finish=()=>{if(current.index>0||current.xp>0)addSession(kind==='review'?'review':'quiz','Partial '+(kind==='review'?'flashcard review':'practice session'),current.xp);if(kind==='review')session=null;else quiz=null;save();closeModal();render();};modal('Finish for now?',`<p>Your earned XP and reviewed cards are already saved. You can start a fresh session whenever you’re ready.</p><div class="modal-actions"><button class="btn secondary" data-action="close-modal">Keep studying</button><button class="btn" id="end-session">End session</button></div>`,()=>$('#end-session').addEventListener('click',finish));}
+function bindPage(){
+ $('#unit-search')?.addEventListener('input',ev=>{librarySearch=ev.target.value;$('#library-grid').innerHTML=filteredUnits();});
+ $('#chapter-filter')?.addEventListener('change',ev=>{libraryChapter=ev.target.value;$('#library-grid').innerHTML=filteredUnits();});
+ $('#review-unit')?.addEventListener('change',ev=>{reviewUnit=ev.target.value;$('#review-summary').textContent=reviewSummary();});
+ $('#review-size')?.addEventListener('change',ev=>reviewSize=ev.target.value);
+ $('#review-mode')?.addEventListener('change',ev=>reviewMode=ev.target.value);
+ $('#practice-unit')?.addEventListener('change',ev=>practiceUnit=ev.target.value);
+ $('#practice-mode')?.addEventListener('change',ev=>practiceMode=ev.target.value);
+ $('#quiz-answer')?.addEventListener('input',ev=>{quiz.answer=ev.target.value;$('[data-action="check-answer"]').disabled=!quiz.answer.trim();});
+ $('#settings-form')?.addEventListener('submit',ev=>{ev.preventDefault();const f=new FormData(ev.target);state.profile={name:String(f.get('name')).trim(),goal:Number(f.get('goal')),theme:f.get('theme')};save();render();toast('Your space, just how you like it.');});
+ $('#import-file')?.addEventListener('change',ev=>importBackup(ev.target.files[0]));
+}
+document.addEventListener('click',ev=>{if(ev.target.closest('.skip-link')){ev.preventDefault();$('#main').focus();return;}const target=ev.target.closest('[data-action]');if(!target||target.disabled)return;const a=target.dataset.action,id=target.dataset.id;
+ switch(a){
+ case'writing-guide':closeModal();openWriting(id);break;
+ case'finish-writing':{const u=unitById(id);if(!u)break;const before=state.xp,earned=award(state,'writing:'+id,30);if(earned)addSession('writing','Notebook · '+u.title,earned);save();closeModal();render();rewardNotice(earned,before);break;}
+ case'menu':menuOpen=!menuOpen;$('.sidebar').classList.toggle('open',menuOpen);$('.menu-scrim').classList.toggle('show',menuOpen);$('.mobile-menu')?.setAttribute('aria-expanded',menuOpen);break;
+ case'settings':navigate('settings');break;
+ case'source-info':modal('Your textbook, your scope',`<div class="source-detail"><b>${e(source.title)}</b><br>Lessons through 1.4d; vocabulary from printed pages 42–45.<br><br>${e(source.note)}<br><br>Included: 1.1a–d (home), 1.2a–d (school), 1.3a–c (food), and 1.4a–d (health). There is no 1.3d in the book. Activities are original revision material aligned to these sections, not reproductions of every publisher exercise.</div>`);break;
+ case'search':openSearch();break;
+ case'close-modal':closeModal();break;
+ case'lesson':openLesson(id);break;
+ case'complete-lesson':{const before=state.xp,earned=completeLesson(state,id);if(earned)addSession('lesson',id+' · '+unitById(id).title,earned);save();closeModal();rewardNotice(earned,before);render();break;}
+ case'lesson-practice':practiceUnit=id;practiceMode='mixed';quiz=null;closeModal();navigate('practice');break;
+ case'lesson-cards':reviewUnit=id;reviewMode='all';session=null;closeModal();navigate('flashcards');break;
+ case'add-card':addCardDialog();break;
+ case'delete-card':{const c=state.customCards.find(c=>c.id===id);if(!c)break;modal('Remove this card?',`<p>Remove <b>${e(c.front)}</b> from your collection? Your earned XP will stay.</p><div class="modal-actions"><button class="btn secondary" data-action="close-modal">Keep card</button><button class="btn danger" id="delete-custom">Remove card</button></div>`,()=>$('#delete-custom').addEventListener('click',()=>{state.customCards=state.customCards.filter(c=>c.id!==id);delete state.reviews[id];save();closeModal();render();}));break;}
+ case'start-review':startReview();break;
+ case'flip':if(session&&!session.finished){session.flipped=!session.flipped;render();}break;
+ case'grade':gradeCard(target.dataset.grade);break;
+ case'review-again':session=null;render();break;
+ case'exit-review':endSession('review');break;
+ case'flag-card':{const c=session.items[session.index];state.reviews[c.id]??={interval:0,repetitions:0,due:localDay(),last:localDay(),mastered:false,difficult:false};state.reviews[c.id].difficult=!state.reviews[c.id].difficult;save();render();break;}
+ case'speak':speak(target.dataset.text);break;
+ case'search-card':{const c=allCards().find(c=>c.id===id);session={items:[c],index:0,flipped:false,xp:0,known:0,finished:false};closeModal();navigate('flashcards');break;}
+ case'start-quiz':startQuiz();break;
+ case'quiz-again':quiz=null;render();break;
+ case'retry-mistakes':startQuiz([...quiz.mistakes]);break;
+ case'exit-quiz':endSession('quiz');break;
+ case'choose':if(!quiz.checked){quiz.answer=quiz.options[Number(target.dataset.index)];render();}break;
+ case'add-word':if(!quiz.checked&&!quiz.selectedWords.includes(Number(target.dataset.index))){quiz.selectedWords.push(Number(target.dataset.index));quiz.answer=quiz.selectedWords.map(i=>quiz.items[quiz.index].answers[i]).join(' ');render();}break;
+ case'remove-word':if(!quiz.checked){quiz.selectedWords.splice(Number(target.dataset.index),1);quiz.answer=quiz.selectedWords.map(i=>quiz.items[quiz.index].answers[i]).join(' ');render();}break;
+ case'insert-char':{const field=$('#quiz-answer');if(field&&!quiz.checked){field.setRangeText(target.dataset.char,field.selectionStart,field.selectionEnd,'end');quiz.answer=field.value;field.focus();$('[data-action="check-answer"]').disabled=!quiz.answer.trim();}break;}
+ case'check-answer':checkAnswer();break;
+ case'next-question':nextQuestion();break;
+ case'add-plan':planDialog();break;
+ case'edit-plan':planDialog(id);break;
+ case'delete-plan':{const index=state.plans.findIndex(p=>p.id===id);if(index<0)break;const p=state.plans[index];modal('Remove this session?',`<p>Remove <b>${e(p.title)}</b> from your plan?</p><div class="modal-actions"><button class="btn secondary" data-action="close-modal">Keep session</button><button class="btn danger" id="delete-session">Remove session</button></div>`,()=>$('#delete-session').addEventListener('click',()=>{state.plans.splice(index,1);save();closeModal();render();}));break;}
+ case'toggle-plan':{const p=state.plans.find(p=>p.id===id);if(p){p.done=!p.done;save();render();}break;}
+ case'prev-week':weekOffset--;selectedDate=weekDays(weekOffset)[0];render();break;
+ case'next-week':weekOffset++;selectedDate=weekDays(weekOffset)[0];render();break;
+ case'today':weekOffset=0;selectedDate=localDay();render();break;
+ case'select-date':selectedDate=target.dataset.date;render();break;
+ case'focus-modal':modal('Find your focus',timerHTML());updateTimerDisplay();break;
+ case'timer-toggle':if(timer.running){timer.seconds=Math.max(0,Math.ceil((timer.deadline-Date.now())/1000));timer.running=false;}else{if(timer.seconds<=0)timer.seconds=timer.duration*60;timer.deadline=Date.now()+timer.seconds*1000;timer.running=true;}updateTimerDisplay();break;
+ case'timer-reset':timer.running=false;timer.seconds=timer.duration*60;timer.deadline=null;updateTimerDisplay();break;
+ case'timer-preset':timer.duration=Number(target.dataset.minutes);timer.seconds=timer.duration*60;timer.running=false;timer.deadline=null;updateTimerDisplay();break;
+ case'export':exportBackup();break;
+ case'import':$('#import-file').click();break;
+ case'reset-data':confirmReset();break;
+ }
+});
+document.addEventListener('keydown',ev=>{if((ev.ctrlKey||ev.metaKey)&&ev.key.toLowerCase()==='k'){ev.preventDefault();openSearch();return;}if($('dialog[open]'))return;const isInput=/INPUT|TEXTAREA|SELECT/.test(ev.target.tagName);if(ev.key==='Enter'&&ev.target.id==='quiz-answer'){ev.preventDefault();checkAnswer();return;}if(isInput)return;if(route==='flashcards'&&session&&!session.finished){if(ev.code==='Space'){ev.preventDefault();session.flipped=!session.flipped;render();}if(session.flipped&&['1','2','3'].includes(ev.key)){ev.preventDefault();gradeCard({1:'again',2:'hard',3:'good'}[ev.key]);}}});
+window.addEventListener('storage',ev=>{if(ev.key===STORAGE_KEY){const result=loadState(localStorage);if(!result.error){state=result.state;session=null;quiz=null;render();toast('Progress updated from another tab.');}}});
+render();
+</script>
+</head>
+<body><a class="skip-link" href="#main">Skip to content</a><div id="app"></div><div id="modal-root"></div><div id="toasts" role="status" aria-live="polite"></div><noscript>This study app needs JavaScript enabled. Your progress is saved in this browser.</noscript></body>
+</html>
